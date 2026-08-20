@@ -1,8 +1,8 @@
 <p align="center">
   <img
-    src="https://github.com/user-attachments/assets/0f3929b5-e2d1-43fe-ae99-093221becda5"
-    width="280"
-    alt="GRNEE"
+    src="https://github.com/user-attachments/assets/7a59b6b3-2c5d-4d41-af7a-9d89db67e73a"
+    width="600"
+    alt="GRNEE logo"
   />
 </p>
 
@@ -74,10 +74,10 @@ Implementation and documentation will be added progressively throughout the grad
 ## Team
 
 <p align="center">
-  <img
-    src="https://github.com/user-attachments/assets/7a59b6b3-2c5d-4d41-af7a-9d89db67e73a"
-    width="600"
-    alt="GRNEE Team"
+    <img
+    src="https://github.com/user-attachments/assets/0f3929b5-e2d1-43fe-ae99-093221becda5"
+    width="280"
+    alt="GRNEE team"
   />
 </p>
 
