@@ -1,0 +1,3 @@
+{"task_id": "task_0201", "text": "Refactor legacy code to use async/await patterns", "type": "Refactoring", "complexity": "Medium", "domain": "Software Engineering"}
+{"task_id": "task_0202", "text": "Classify customer support tickets by urgency", "type": "Classification", "complexity": "Medium", "domain": "Customer Support"}
+{"task_id": "task_0203", "text": "Deploy AI model to production", "type": "Deployment", "complexity": "Medium", "domain": "Devops"}

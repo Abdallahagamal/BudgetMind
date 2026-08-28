@@ -1,0 +1,8 @@
+{"task_id": "task_0001", "text": "Fix authentication error in mobile login", "type": "Debugging", "complexity": "Medium", "domain": "Software Engineering"}
+{"task_id": "task_0002", "text": "Summarize a 10-page legal contract into bullet points", "type": "Summarization", "complexity": "Low", "domain": "Legal"}
+{"task_id": "task_0003", "text": "Design a distributed caching layer for a high-traffic API", "type": "System Design", "complexity": "High", "domain": "Software Engineering"}
+{"task_id": "task_0004", "text": "Translate a product description from English to Spanish", "type": "Translation", "complexity": "Low", "domain": "Localization"}
+{"task_id": "task_0005", "text": "Write unit tests for a payment processing module", "type": "Testing", "complexity": "Medium", "domain": "Software Engineering"}
+{"task_id": "task_0006", "text": "Analyze quarterly sales data and identify growth trends", "type": "Data Analysis", "complexity": "Medium", "domain": "Business"}
+{"task_id": "task_0007", "text": "Draft a marketing email for a new product launch", "type": "Content Writing", "complexity": "Low", "domain": "Marketing"}
+{"task_id": "task_0008", "text": "Optimize a slow SQL query joining five large tables", "type": "Optimization", "complexity": "High", "domain": "Software Engineering"}
