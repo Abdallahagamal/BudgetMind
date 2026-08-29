@@ -15,16 +15,14 @@ classified by the BudgetMind Task Classification Layer.
 - openai/gsm8k
 - mmlu
 - BIG-Bench-Hard
+- devpkprajapati/ai-system-design-instruct
+- HLD-Bench
+- Hugging Face Creative Writing datasets
 
-## Dataset Statistics
-Raw tasks: 353
-After removing duplicates: 
-After removing invalid records: 
 
 ## Fields
 task_id
 task_text
-answer
 source
 date_collected
 type
@@ -37,6 +35,33 @@ domain
 - Removed duplicate tasks
 - Normalized whitespace
 - Preserved technical terminology
+
+
+### What Changed
+
+| Fix | Rows Affected | What Was Wrong |
+|---|---:|---|
+| Fixed doubled quotes | 18 (`cnn_dailymail`) | `""` appeared where `"` was intended due to a CSV-escaping artifact left over from scraping. |
+| Normalized line endings | 21 of 38 (`SWE-bench`) | Windows-style `\r\n` line endings appeared inside embedded code. They were normalized to consistent `\n` line endings. |
+| Collapsed double spaces | 7 (`GSM8K`) | Double spaces after periods were removed. This was a formatting inconsistency found in the GSM8K records. |
+| Fixed casing and punctuation | 35 (Natural Questions) | Raw lowercase search queries without punctuation (e.g., `"where did they film..."`) were converted into properly formatted questions. |
+| Exact duplicates | 0 | No exact duplicate records were found. |
+
+### What I Flagged Instead of Deleting
+
+A total of **73 candidate near-duplicate pairs** were identified using TF-IDF similarity. However, most were **false positives rather than actual duplicates**, so they were retained.
+
+- **WMT rows:** The same source sentence may appear with different target languages, such as Finnish, German, French, or Spanish. These rows are lexically similar because the English source content is repeated, but they represent genuinely different translation tasks. Therefore, they were kept.
+
+- **`devpkprajapati` architecture rows:** This was the main finding. The same system concept (for example, **"Real-Time Fraud Scoring Service"**) appears 3–4 times with different QPS and latency requirements, such as 35,000 QPS vs. 9,000 QPS. These are not exact duplicates, and the different scale requirements could reasonably affect the **COMPLEXITY** label, potentially changing it from Medium to High. Therefore, they were retained.
+
+  However, this means that the **60 architecture-design rows represent approximately 16 distinct system concepts**, rather than 60 completely different concepts. This should be a team decision: either keep the variants because the different constraints create meaningful task differences, or limit the dataset to a maximum of 2 variants per system concept and replace the remaining rows with more diverse architecture prompts.
+
+
+## Dataset Statistics
+Raw tasks: 540
+After removing duplicates: 540
+After removing invalid records: 540
 
 ## Labeling
 TYPE, COMPLEXITY, and DOMAIN are not assigned yet.
