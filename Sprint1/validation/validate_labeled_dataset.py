@@ -1,19 +1,3 @@
-"""Member 4 — automated checks for the labeled classification dataset.
-
-This cannot prove every row is correctly labeled. It finds mechanical
-violations of the Sprint 1 taxonomy and ranks rows that are worth a human look.
-
-Usage (from the BudgetMind repo root):
-
-    python Sprint1/validation/validate_labeled_dataset.py
-
-Outputs:
-
-    Sprint1/validation/validation_report.md
-    Sprint1/validation/validation_issues.csv
-    Sprint1/validation/manual_review_sample.csv
-"""
-
 from __future__ import annotations
 
 import argparse
