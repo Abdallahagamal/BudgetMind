@@ -1,8 +1,5 @@
 # Labeled dataset validation report
 
-Source file: `C:\Users\20106\OneDrive - Cairo University - Students\Desktop\BudgetMind\Sprint1\Label\labeled_dataset.csv`
-Rows: **540** (plus header). Member 4 should treat this as the full labeled set to check, not 541 separate manual reads.
-
 ## What this script can and cannot do
 
 | Automatable | Still needs a human |
