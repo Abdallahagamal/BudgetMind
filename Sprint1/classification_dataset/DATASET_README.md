@@ -69,8 +69,11 @@ They will be assigned by the labeling team according
 to the Sprint 1 taxonomy.
 
 
-## Notes for Sprint 1 to be done (Esraa)
- 1. Tasks "T0461, T0467, T0427, T0415, T0301,T0305,T0313,T0433,T0438, T0297,T0270,T0261,T0116,T0018" didn't get labeled
- 2. converting "labeled_dataset.csv" into "labeled_dataset.jsonl"
- 3. Havn't done "split Train/Val/Test" task yet
- 4. we need to Run generate_embeddings.py on the real splits
+## All finished on 6/9/2026
+{
+  ## Notes for Sprint 1 to be done (Esraa)
+  1. Tasks "T0461, T0467, T0427, T0415, T0301,T0305,T0313,T0433,T0438, T0297,T0270,T0261,T0116,T0018" didn't get labeled
+  2. converting "labeled_dataset.csv" into "labeled_dataset.jsonl"
+  3. Havn't done "split Train/Val/Test" task yet
+  4. we need to Run generate_embeddings.py on the real splits
+}
