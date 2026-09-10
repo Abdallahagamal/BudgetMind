@@ -1,0 +1,136 @@
+{
+  "dimension": "domain",
+  "protocol": "nested_leave_one_source_out",
+  "C_grid": [
+    0.1,
+    1.0,
+    10.0,
+    100.0
+  ],
+  "nested_macro_f1": 0.47672566828637714,
+  "nested_accuracy": 0.7031539888682746,
+  "evaluated_labels": [
+    "General Knowledge/Cross-Domain",
+    "Language & Communication",
+    "Mathematics & Quantitative",
+    "Software Engineering & Technology"
+  ],
+  "unevaluable_labels": [],
+  "selected_C_counts": {
+    "0.1": 2,
+    "1.0": 2,
+    "10.0": 4,
+    "100.0": 5
+  },
+  "modal_C": 100.0,
+  "per_fold": [
+    {
+      "held_out_source": "BIG-Bench-Hard",
+      "n": 16,
+      "selected_C": 100.0,
+      "accuracy": 1.0
+    },
+    {
+      "held_out_source": "HLD-Bench",
+      "n": 55,
+      "selected_C": 10.0,
+      "accuracy": 0.7636363636363637
+    },
+    {
+      "held_out_source": "Hugging Face Creative Writing datasets",
+      "n": 70,
+      "selected_C": 10.0,
+      "accuracy": 0.32857142857142857
+    },
+    {
+      "held_out_source": "Natural Questions (NQ)",
+      "n": 35,
+      "selected_C": 1.0,
+      "accuracy": 0.9714285714285714
+    },
+    {
+      "held_out_source": "SWE-bench",
+      "n": 38,
+      "selected_C": 100.0,
+      "accuracy": 0.6842105263157895
+    },
+    {
+      "held_out_source": "TruthfulQA",
+      "n": 100,
+      "selected_C": 0.1,
+      "accuracy": 0.9
+    },
+    {
+      "held_out_source": "WMT translation",
+      "n": 49,
+      "selected_C": 100.0,
+      "accuracy": 0.32653061224489793
+    },
+    {
+      "held_out_source": "Xsum",
+      "n": 11,
+      "selected_C": 100.0,
+      "accuracy": 1.0
+    },
+    {
+      "held_out_source": "cnn_dailymail",
+      "n": 18,
+      "selected_C": 10.0,
+      "accuracy": 1.0
+    },
+    {
+      "held_out_source": "devpkprajapati/ai-system-design-instruct",
+      "n": 60,
+      "selected_C": 0.1,
+      "accuracy": 0.9833333333333333
+    },
+    {
+      "held_out_source": "google-research-datasets (MBPP)",
+      "n": 20,
+      "selected_C": 100.0,
+      "accuracy": 1.0
+    },
+    {
+      "held_out_source": "mmlu",
+      "n": 28,
+      "selected_C": 1.0,
+      "accuracy": 0.8571428571428571
+    },
+    {
+      "held_out_source": "openai/gsm8k",
+      "n": 39,
+      "selected_C": 10.0,
+      "accuracy": 0.0
+    }
+  ],
+  "per_class": [
+    {
+      "label": "General Knowledge/Cross-Domain",
+      "precision": 0.6523076923076923,
+      "recall": 0.9217391304347826,
+      "f1": 0.7639639639639639,
+      "support": 230
+    },
+    {
+      "label": "Language & Communication",
+      "precision": 0.5882352941176471,
+      "recall": 0.21052631578947367,
+      "f1": 0.31007751937984496,
+      "support": 95
+    },
+    {
+      "label": "Mathematics & Quantitative",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 40
+    },
+    {
+      "label": "Software Engineering & Technology",
+      "precision": 0.8212290502793296,
+      "recall": 0.8448275862068966,
+      "f1": 0.8328611898016998,
+      "support": 174
+    }
+  ]
+}

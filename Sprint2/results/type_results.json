@@ -1,0 +1,1406 @@
+{
+  "dimension": "type",
+  "taxonomy_version": "1.0",
+  "embedding_model": "all-MiniLM-L6-v2",
+  "n_train": 377,
+  "n_validation": 80,
+  "n_test": 83,
+  "labels": [
+    "Analytical/Logical Reasoning",
+    "Architecture & System Design",
+    "Coding & Debugging",
+    "Creative & Open-Ended Generation",
+    "Factual Q&A",
+    "Mathematical Reasoning",
+    "Summarization",
+    "Translation"
+  ],
+  "majority_baseline": {
+    "accuracy": 0.25301204819277107,
+    "macro_f1": 0.05048076923076923
+  },
+  "candidates": {
+    "LogisticRegression": {
+      "random_protocol": {
+        "validation_macro_f1": 1.0,
+        "test_accuracy": 0.963855421686747,
+        "test_macro_precision": 0.9486607142857143,
+        "test_macro_recall": 0.9821428571428572,
+        "test_macro_f1": 0.9612179487179487,
+        "test_ece": 0.3375029165079525,
+        "inference_ms_for_test_set": 0.08487500599585474,
+        "per_class": [
+          {
+            "label": "Analytical/Logical Reasoning",
+            "precision": 0.875,
+            "recall": 1.0,
+            "f1": 0.9333333333333333,
+            "support": 7
+          },
+          {
+            "label": "Architecture & System Design",
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 17
+          },
+          {
+            "label": "Coding & Debugging",
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 8
+          },
+          {
+            "label": "Creative & Open-Ended Generation",
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 11
+          },
+          {
+            "label": "Factual Q&A",
+            "precision": 1.0,
+            "recall": 0.8571428571428571,
+            "f1": 0.9230769230769231,
+            "support": 21
+          },
+          {
+            "label": "Mathematical Reasoning",
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 6
+          },
+          {
+            "label": "Summarization",
+            "precision": 0.7142857142857143,
+            "recall": 1.0,
+            "f1": 0.8333333333333334,
+            "support": 5
+          },
+          {
+            "label": "Translation",
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 8
+          }
+        ],
+        "confusion_matrix": [
+          [
+            7,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            17,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            8,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            11,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            18,
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            6,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            5,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            8
+          ]
+        ],
+        "errors": [
+          {
+            "task_id": "T0005",
+            "true": "Factual Q&A",
+            "predicted": "Summarization",
+            "confidence": 0.2235321803789587,
+            "margin": 0.0032406942887666934
+          },
+          {
+            "task_id": "T0030",
+            "true": "Factual Q&A",
+            "predicted": "Analytical/Logical Reasoning",
+            "confidence": 0.20584272827499814,
+            "margin": 0.018113982852438898
+          },
+          {
+            "task_id": "T0087",
+            "true": "Factual Q&A",
+            "predicted": "Summarization",
+            "confidence": 0.2632942366218005,
+            "margin": 0.015411137210271486
+          }
+        ]
+      },
+      "grouped_protocol": {
+        "pooled_accuracy": 0.7769028871391076,
+        "pooled_macro_f1": 0.7616210649472122,
+        "evaluated_labels": [
+          "Analytical/Logical Reasoning",
+          "Architecture & System Design",
+          "Coding & Debugging",
+          "Factual Q&A",
+          "Summarization"
+        ],
+        "unevaluable_labels": [
+          "Creative & Open-Ended Generation",
+          "Mathematical Reasoning",
+          "Translation"
+        ],
+        "per_class": [
+          {
+            "label": "Analytical/Logical Reasoning",
+            "precision": 0.6567164179104478,
+            "recall": 0.9777777777777777,
+            "f1": 0.7857142857142857,
+            "support": 45
+          },
+          {
+            "label": "Architecture & System Design",
+            "precision": 0.987012987012987,
+            "recall": 0.6666666666666666,
+            "f1": 0.7958115183246073,
+            "support": 114
+          },
+          {
+            "label": "Coding & Debugging",
+            "precision": 0.88,
+            "recall": 0.7586206896551724,
+            "f1": 0.8148148148148148,
+            "support": 58
+          },
+          {
+            "label": "Factual Q&A",
+            "precision": 0.8175182481751825,
+            "recall": 0.8296296296296296,
+            "f1": 0.8235294117647058,
+            "support": 135
+          },
+          {
+            "label": "Summarization",
+            "precision": 0.5128205128205128,
+            "recall": 0.6896551724137931,
+            "f1": 0.5882352941176471,
+            "support": 29
+          }
+        ],
+        "per_source": [
+          {
+            "source": "BIG-Bench-Hard",
+            "n": 16,
+            "true_labels": [
+              "Analytical/Logical Reasoning"
+            ],
+            "accuracy": 1.0,
+            "label_covered_by_train": true,
+            "top_confusions": []
+          },
+          {
+            "source": "HLD-Bench",
+            "n": 55,
+            "true_labels": [
+              "Analytical/Logical Reasoning",
+              "Architecture & System Design"
+            ],
+            "accuracy": 0.3090909090909091,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Analytical/Logical Reasoning",
+                "count": 18
+              },
+              {
+                "predicted": "Creative & Open-Ended Generation",
+                "count": 8
+              },
+              {
+                "predicted": "Factual Q&A",
+                "count": 8
+              }
+            ]
+          },
+          {
+            "source": "Hugging Face Creative Writing datasets",
+            "n": 70,
+            "true_labels": [
+              "Creative & Open-Ended Generation"
+            ],
+            "accuracy": 0.0,
+            "label_covered_by_train": false,
+            "top_confusions": [
+              {
+                "predicted": "Factual Q&A",
+                "count": 30
+              },
+              {
+                "predicted": "Translation",
+                "count": 23
+              },
+              {
+                "predicted": "Analytical/Logical Reasoning",
+                "count": 7
+              }
+            ]
+          },
+          {
+            "source": "Natural Questions (NQ)",
+            "n": 35,
+            "true_labels": [
+              "Factual Q&A"
+            ],
+            "accuracy": 0.8857142857142857,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Analytical/Logical Reasoning",
+                "count": 2
+              },
+              {
+                "predicted": "Summarization",
+                "count": 1
+              },
+              {
+                "predicted": "Translation",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "SWE-bench",
+            "n": 38,
+            "true_labels": [
+              "Coding & Debugging"
+            ],
+            "accuracy": 0.631578947368421,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Factual Q&A",
+                "count": 7
+              },
+              {
+                "predicted": "Analytical/Logical Reasoning",
+                "count": 3
+              },
+              {
+                "predicted": "Summarization",
+                "count": 3
+              }
+            ]
+          },
+          {
+            "source": "TruthfulQA",
+            "n": 100,
+            "true_labels": [
+              "Factual Q&A"
+            ],
+            "accuracy": 0.81,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Summarization",
+                "count": 14
+              },
+              {
+                "predicted": "Coding & Debugging",
+                "count": 3
+              },
+              {
+                "predicted": "Architecture & System Design",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "WMT translation",
+            "n": 49,
+            "true_labels": [
+              "Translation"
+            ],
+            "accuracy": 0.0,
+            "label_covered_by_train": false,
+            "top_confusions": [
+              {
+                "predicted": "Creative & Open-Ended Generation",
+                "count": 36
+              },
+              {
+                "predicted": "Coding & Debugging",
+                "count": 6
+              },
+              {
+                "predicted": "Summarization",
+                "count": 3
+              }
+            ]
+          },
+          {
+            "source": "Xsum",
+            "n": 11,
+            "true_labels": [
+              "Summarization"
+            ],
+            "accuracy": 0.9090909090909091,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Factual Q&A",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "cnn_dailymail",
+            "n": 18,
+            "true_labels": [
+              "Summarization"
+            ],
+            "accuracy": 0.5555555555555556,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Factual Q&A",
+                "count": 8
+              }
+            ]
+          },
+          {
+            "source": "devpkprajapati/ai-system-design-instruct",
+            "n": 60,
+            "true_labels": [
+              "Architecture & System Design"
+            ],
+            "accuracy": 1.0,
+            "label_covered_by_train": true,
+            "top_confusions": []
+          },
+          {
+            "source": "google-research-datasets (MBPP)",
+            "n": 20,
+            "true_labels": [
+              "Coding & Debugging"
+            ],
+            "accuracy": 1.0,
+            "label_covered_by_train": true,
+            "top_confusions": []
+          },
+          {
+            "source": "mmlu",
+            "n": 28,
+            "true_labels": [
+              "Analytical/Logical Reasoning"
+            ],
+            "accuracy": 0.9642857142857143,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Factual Q&A",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "openai/gsm8k",
+            "n": 39,
+            "true_labels": [
+              "Mathematical Reasoning"
+            ],
+            "accuracy": 0.0,
+            "label_covered_by_train": false,
+            "top_confusions": [
+              {
+                "predicted": "Coding & Debugging",
+                "count": 28
+              },
+              {
+                "predicted": "Analytical/Logical Reasoning",
+                "count": 10
+              },
+              {
+                "predicted": "Factual Q&A",
+                "count": 1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "RandomForest": {
+      "random_protocol": {
+        "validation_macro_f1": 0.9455388361638362,
+        "test_accuracy": 0.9518072289156626,
+        "test_macro_precision": 0.98,
+        "test_macro_recall": 0.9323863636363636,
+        "test_macro_f1": 0.951432022084196,
+        "test_ece": 0.4678714859437751,
+        "inference_ms_for_test_set": 13.868708003428765,
+        "per_class": [
+          {
+            "label": "Analytical/Logical Reasoning",
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 7
+          },
+          {
+            "label": "Architecture & System Design",
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 17
+          },
+          {
+            "label": "Coding & Debugging",
+            "precision": 1.0,
+            "recall": 0.75,
+            "f1": 0.8571428571428571,
+            "support": 8
+          },
+          {
+            "label": "Creative & Open-Ended Generation",
+            "precision": 1.0,
+            "recall": 0.9090909090909091,
+            "f1": 0.9523809523809523,
+            "support": 11
+          },
+          {
+            "label": "Factual Q&A",
+            "precision": 0.84,
+            "recall": 1.0,
+            "f1": 0.9130434782608695,
+            "support": 21
+          },
+          {
+            "label": "Mathematical Reasoning",
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 6
+          },
+          {
+            "label": "Summarization",
+            "precision": 1.0,
+            "recall": 0.8,
+            "f1": 0.8888888888888888,
+            "support": 5
+          },
+          {
+            "label": "Translation",
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 8
+          }
+        ],
+        "confusion_matrix": [
+          [
+            7,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            17,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            6,
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            10,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            21,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            6,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            4,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            8
+          ]
+        ],
+        "errors": [
+          {
+            "task_id": "T0194",
+            "true": "Summarization",
+            "predicted": "Factual Q&A",
+            "confidence": 0.27,
+            "margin": 0.053333333333333344
+          },
+          {
+            "task_id": "T0235",
+            "true": "Coding & Debugging",
+            "predicted": "Factual Q&A",
+            "confidence": 0.29,
+            "margin": 0.09333333333333332
+          },
+          {
+            "task_id": "T0515",
+            "true": "Creative & Open-Ended Generation",
+            "predicted": "Factual Q&A",
+            "confidence": 0.3333333333333333,
+            "margin": 0.05666666666666664
+          },
+          {
+            "task_id": "T0540",
+            "true": "Coding & Debugging",
+            "predicted": "Factual Q&A",
+            "confidence": 0.29333333333333333,
+            "margin": 0.07999999999999999
+          }
+        ]
+      },
+      "grouped_protocol": {
+        "pooled_accuracy": 0.47244094488188976,
+        "pooled_macro_f1": 0.49270553851555804,
+        "evaluated_labels": [
+          "Analytical/Logical Reasoning",
+          "Architecture & System Design",
+          "Coding & Debugging",
+          "Factual Q&A",
+          "Summarization"
+        ],
+        "unevaluable_labels": [
+          "Creative & Open-Ended Generation",
+          "Mathematical Reasoning",
+          "Translation"
+        ],
+        "per_class": [
+          {
+            "label": "Analytical/Logical Reasoning",
+            "precision": 0.8148148148148148,
+            "recall": 0.4888888888888889,
+            "f1": 0.6111111111111112,
+            "support": 45
+          },
+          {
+            "label": "Architecture & System Design",
+            "precision": 0.75,
+            "recall": 0.39473684210526316,
+            "f1": 0.5172413793103449,
+            "support": 114
+          },
+          {
+            "label": "Coding & Debugging",
+            "precision": 0.5454545454545454,
+            "recall": 0.20689655172413793,
+            "f1": 0.3,
+            "support": 58
+          },
+          {
+            "label": "Factual Q&A",
+            "precision": 0.3813559322033898,
+            "recall": 0.6666666666666666,
+            "f1": 0.48517520215633425,
+            "support": 135
+          },
+          {
+            "label": "Summarization",
+            "precision": 1.0,
+            "recall": 0.3793103448275862,
+            "f1": 0.55,
+            "support": 29
+          }
+        ],
+        "per_source": [
+          {
+            "source": "BIG-Bench-Hard",
+            "n": 16,
+            "true_labels": [
+              "Analytical/Logical Reasoning"
+            ],
+            "accuracy": 0.875,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Factual Q&A",
+                "count": 2
+              }
+            ]
+          },
+          {
+            "source": "HLD-Bench",
+            "n": 55,
+            "true_labels": [
+              "Analytical/Logical Reasoning",
+              "Architecture & System Design"
+            ],
+            "accuracy": 0.0,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Factual Q&A",
+                "count": 53
+              },
+              {
+                "predicted": "Creative & Open-Ended Generation",
+                "count": 2
+              }
+            ]
+          },
+          {
+            "source": "Hugging Face Creative Writing datasets",
+            "n": 70,
+            "true_labels": [
+              "Creative & Open-Ended Generation"
+            ],
+            "accuracy": 0.0,
+            "label_covered_by_train": false,
+            "top_confusions": [
+              {
+                "predicted": "Factual Q&A",
+                "count": 70
+              }
+            ]
+          },
+          {
+            "source": "Natural Questions (NQ)",
+            "n": 35,
+            "true_labels": [
+              "Factual Q&A"
+            ],
+            "accuracy": 1.0,
+            "label_covered_by_train": true,
+            "top_confusions": []
+          },
+          {
+            "source": "SWE-bench",
+            "n": 38,
+            "true_labels": [
+              "Coding & Debugging"
+            ],
+            "accuracy": 0.10526315789473684,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Factual Q&A",
+                "count": 33
+              },
+              {
+                "predicted": "Mathematical Reasoning",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "TruthfulQA",
+            "n": 100,
+            "true_labels": [
+              "Factual Q&A"
+            ],
+            "accuracy": 0.55,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Creative & Open-Ended Generation",
+                "count": 20
+              },
+              {
+                "predicted": "Architecture & System Design",
+                "count": 12
+              },
+              {
+                "predicted": "Coding & Debugging",
+                "count": 10
+              }
+            ]
+          },
+          {
+            "source": "WMT translation",
+            "n": 49,
+            "true_labels": [
+              "Translation"
+            ],
+            "accuracy": 0.0,
+            "label_covered_by_train": false,
+            "top_confusions": [
+              {
+                "predicted": "Factual Q&A",
+                "count": 36
+              },
+              {
+                "predicted": "Summarization",
+                "count": 5
+              },
+              {
+                "predicted": "Creative & Open-Ended Generation",
+                "count": 4
+              }
+            ]
+          },
+          {
+            "source": "Xsum",
+            "n": 11,
+            "true_labels": [
+              "Summarization"
+            ],
+            "accuracy": 0.6363636363636364,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Factual Q&A",
+                "count": 3
+              },
+              {
+                "predicted": "Analytical/Logical Reasoning",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "cnn_dailymail",
+            "n": 18,
+            "true_labels": [
+              "Summarization"
+            ],
+            "accuracy": 0.2222222222222222,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Factual Q&A",
+                "count": 14
+              }
+            ]
+          },
+          {
+            "source": "devpkprajapati/ai-system-design-instruct",
+            "n": 60,
+            "true_labels": [
+              "Architecture & System Design"
+            ],
+            "accuracy": 0.75,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Factual Q&A",
+                "count": 12
+              },
+              {
+                "predicted": "Analytical/Logical Reasoning",
+                "count": 3
+              }
+            ]
+          },
+          {
+            "source": "google-research-datasets (MBPP)",
+            "n": 20,
+            "true_labels": [
+              "Coding & Debugging"
+            ],
+            "accuracy": 0.4,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Factual Q&A",
+                "count": 12
+              }
+            ]
+          },
+          {
+            "source": "mmlu",
+            "n": 28,
+            "true_labels": [
+              "Analytical/Logical Reasoning"
+            ],
+            "accuracy": 0.2857142857142857,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Factual Q&A",
+                "count": 17
+              },
+              {
+                "predicted": "Architecture & System Design",
+                "count": 3
+              }
+            ]
+          },
+          {
+            "source": "openai/gsm8k",
+            "n": 39,
+            "true_labels": [
+              "Mathematical Reasoning"
+            ],
+            "accuracy": 0.0,
+            "label_covered_by_train": false,
+            "top_confusions": [
+              {
+                "predicted": "Analytical/Logical Reasoning",
+                "count": 16
+              },
+              {
+                "predicted": "Factual Q&A",
+                "count": 13
+              },
+              {
+                "predicted": "Coding & Debugging",
+                "count": 9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "SVM": {
+      "random_protocol": {
+        "validation_macro_f1": 0.982905982905983,
+        "test_accuracy": 0.9879518072289156,
+        "test_macro_precision": 0.9791666666666667,
+        "test_macro_recall": 0.9940476190476191,
+        "test_macro_f1": 0.9855875831485588,
+        "test_ece": 0.09996562182110486,
+        "inference_ms_for_test_set": 4.133000009460375,
+        "per_class": [
+          {
+            "label": "Analytical/Logical Reasoning",
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 7
+          },
+          {
+            "label": "Architecture & System Design",
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 17
+          },
+          {
+            "label": "Coding & Debugging",
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 8
+          },
+          {
+            "label": "Creative & Open-Ended Generation",
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 11
+          },
+          {
+            "label": "Factual Q&A",
+            "precision": 1.0,
+            "recall": 0.9523809523809523,
+            "f1": 0.975609756097561,
+            "support": 21
+          },
+          {
+            "label": "Mathematical Reasoning",
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 6
+          },
+          {
+            "label": "Summarization",
+            "precision": 0.8333333333333334,
+            "recall": 1.0,
+            "f1": 0.9090909090909091,
+            "support": 5
+          },
+          {
+            "label": "Translation",
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 8
+          }
+        ],
+        "confusion_matrix": [
+          [
+            7,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            17,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            8,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            11,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            20,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            6,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            5,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            8
+          ]
+        ],
+        "errors": [
+          {
+            "task_id": "T0087",
+            "true": "Factual Q&A",
+            "predicted": "Summarization",
+            "confidence": 0.42555073935694154,
+            "margin": 0.08824405006205449
+          }
+        ]
+      },
+      "grouped_protocol": {
+        "pooled_accuracy": 0.6640419947506562,
+        "pooled_macro_f1": 0.6165754873514857,
+        "evaluated_labels": [
+          "Analytical/Logical Reasoning",
+          "Architecture & System Design",
+          "Coding & Debugging",
+          "Factual Q&A",
+          "Summarization"
+        ],
+        "unevaluable_labels": [
+          "Creative & Open-Ended Generation",
+          "Mathematical Reasoning",
+          "Translation"
+        ],
+        "per_class": [
+          {
+            "label": "Analytical/Logical Reasoning",
+            "precision": 0.7346938775510204,
+            "recall": 0.8,
+            "f1": 0.7659574468085106,
+            "support": 45
+          },
+          {
+            "label": "Architecture & System Design",
+            "precision": 0.9836065573770492,
+            "recall": 0.5263157894736842,
+            "f1": 0.6857142857142857,
+            "support": 114
+          },
+          {
+            "label": "Coding & Debugging",
+            "precision": 0.8536585365853658,
+            "recall": 0.603448275862069,
+            "f1": 0.7070707070707071,
+            "support": 58
+          },
+          {
+            "label": "Factual Q&A",
+            "precision": 0.5598086124401914,
+            "recall": 0.8666666666666667,
+            "f1": 0.6802325581395349,
+            "support": 135
+          },
+          {
+            "label": "Summarization",
+            "precision": 0.4166666666666667,
+            "recall": 0.1724137931034483,
+            "f1": 0.24390243902439024,
+            "support": 29
+          }
+        ],
+        "per_source": [
+          {
+            "source": "BIG-Bench-Hard",
+            "n": 16,
+            "true_labels": [
+              "Analytical/Logical Reasoning"
+            ],
+            "accuracy": 1.0,
+            "label_covered_by_train": true,
+            "top_confusions": []
+          },
+          {
+            "source": "HLD-Bench",
+            "n": 55,
+            "true_labels": [
+              "Analytical/Logical Reasoning",
+              "Architecture & System Design"
+            ],
+            "accuracy": 0.01818181818181818,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Factual Q&A",
+                "count": 37
+              },
+              {
+                "predicted": "Analytical/Logical Reasoning",
+                "count": 9
+              },
+              {
+                "predicted": "Creative & Open-Ended Generation",
+                "count": 6
+              }
+            ]
+          },
+          {
+            "source": "Hugging Face Creative Writing datasets",
+            "n": 70,
+            "true_labels": [
+              "Creative & Open-Ended Generation"
+            ],
+            "accuracy": 0.0,
+            "label_covered_by_train": false,
+            "top_confusions": [
+              {
+                "predicted": "Factual Q&A",
+                "count": 63
+              },
+              {
+                "predicted": "Analytical/Logical Reasoning",
+                "count": 4
+              },
+              {
+                "predicted": "Architecture & System Design",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "Natural Questions (NQ)",
+            "n": 35,
+            "true_labels": [
+              "Factual Q&A"
+            ],
+            "accuracy": 0.9714285714285714,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Analytical/Logical Reasoning",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "SWE-bench",
+            "n": 38,
+            "true_labels": [
+              "Coding & Debugging"
+            ],
+            "accuracy": 0.42105263157894735,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Factual Q&A",
+                "count": 21
+              },
+              {
+                "predicted": "Analytical/Logical Reasoning",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "TruthfulQA",
+            "n": 100,
+            "true_labels": [
+              "Factual Q&A"
+            ],
+            "accuracy": 0.83,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Summarization",
+                "count": 6
+              },
+              {
+                "predicted": "Coding & Debugging",
+                "count": 5
+              },
+              {
+                "predicted": "Creative & Open-Ended Generation",
+                "count": 3
+              }
+            ]
+          },
+          {
+            "source": "WMT translation",
+            "n": 49,
+            "true_labels": [
+              "Translation"
+            ],
+            "accuracy": 0.0,
+            "label_covered_by_train": false,
+            "top_confusions": [
+              {
+                "predicted": "Factual Q&A",
+                "count": 35
+              },
+              {
+                "predicted": "Creative & Open-Ended Generation",
+                "count": 9
+              },
+              {
+                "predicted": "Analytical/Logical Reasoning",
+                "count": 2
+              }
+            ]
+          },
+          {
+            "source": "Xsum",
+            "n": 11,
+            "true_labels": [
+              "Summarization"
+            ],
+            "accuracy": 0.18181818181818182,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Factual Q&A",
+                "count": 9
+              }
+            ]
+          },
+          {
+            "source": "cnn_dailymail",
+            "n": 18,
+            "true_labels": [
+              "Summarization"
+            ],
+            "accuracy": 0.16666666666666666,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Factual Q&A",
+                "count": 15
+              }
+            ]
+          },
+          {
+            "source": "devpkprajapati/ai-system-design-instruct",
+            "n": 60,
+            "true_labels": [
+              "Architecture & System Design"
+            ],
+            "accuracy": 1.0,
+            "label_covered_by_train": true,
+            "top_confusions": []
+          },
+          {
+            "source": "google-research-datasets (MBPP)",
+            "n": 20,
+            "true_labels": [
+              "Coding & Debugging"
+            ],
+            "accuracy": 0.95,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Factual Q&A",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "mmlu",
+            "n": 28,
+            "true_labels": [
+              "Analytical/Logical Reasoning"
+            ],
+            "accuracy": 0.6785714285714286,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Factual Q&A",
+                "count": 9
+              }
+            ]
+          },
+          {
+            "source": "openai/gsm8k",
+            "n": 39,
+            "true_labels": [
+              "Mathematical Reasoning"
+            ],
+            "accuracy": 0.0,
+            "label_covered_by_train": false,
+            "top_confusions": [
+              {
+                "predicted": "Coding & Debugging",
+                "count": 19
+              },
+              {
+                "predicted": "Factual Q&A",
+                "count": 12
+              },
+              {
+                "predicted": "Analytical/Logical Reasoning",
+                "count": 8
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

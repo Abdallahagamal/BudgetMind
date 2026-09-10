@@ -1,0 +1,1145 @@
+{
+  "dimension": "complexity",
+  "taxonomy_version": "1.0",
+  "embedding_model": "all-MiniLM-L6-v2",
+  "n_train": 377,
+  "n_validation": 80,
+  "n_test": 83,
+  "labels": [
+    "High",
+    "Low",
+    "Medium"
+  ],
+  "majority_baseline": {
+    "accuracy": 0.5542168674698795,
+    "macro_f1": 0.23772609819121449
+  },
+  "candidates": {
+    "LogisticRegression": {
+      "random_protocol": {
+        "validation_macro_f1": 0.9046137046137046,
+        "test_accuracy": 0.9036144578313253,
+        "test_macro_precision": 0.8890451832907077,
+        "test_macro_recall": 0.9025032938076416,
+        "test_macro_f1": 0.8939354727398205,
+        "test_ece": 0.13661617987073957,
+        "inference_ms_for_test_set": 0.09504200716037303,
+        "per_class": [
+          {
+            "label": "High",
+            "precision": 0.8823529411764706,
+            "recall": 1.0,
+            "f1": 0.9375,
+            "support": 15
+          },
+          {
+            "label": "Low",
+            "precision": 0.9347826086956522,
+            "recall": 0.9347826086956522,
+            "f1": 0.9347826086956522,
+            "support": 46
+          },
+          {
+            "label": "Medium",
+            "precision": 0.85,
+            "recall": 0.7727272727272727,
+            "f1": 0.8095238095238095,
+            "support": 22
+          }
+        ],
+        "confusion_matrix": [
+          [
+            15,
+            0,
+            0
+          ],
+          [
+            0,
+            43,
+            3
+          ],
+          [
+            2,
+            3,
+            17
+          ]
+        ],
+        "errors": [
+          {
+            "task_id": "T0005",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.5153679325719659,
+            "margin": 0.1309092088004729
+          },
+          {
+            "task_id": "T0007",
+            "true": "Low",
+            "predicted": "Medium",
+            "confidence": 0.7123384113996928,
+            "margin": 0.50012400515099
+          },
+          {
+            "task_id": "T0030",
+            "true": "Low",
+            "predicted": "Medium",
+            "confidence": 0.4929014620469837,
+            "margin": 0.01519582630055033
+          },
+          {
+            "task_id": "T0116",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.7626542960722175,
+            "margin": 0.6368517645491287
+          },
+          {
+            "task_id": "T0194",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.5597093438750238,
+            "margin": 0.18768037790026143
+          },
+          {
+            "task_id": "T0242",
+            "true": "Low",
+            "predicted": "Medium",
+            "confidence": 0.5036945193482979,
+            "margin": 0.0808092105408656
+          },
+          {
+            "task_id": "T0449",
+            "true": "Medium",
+            "predicted": "High",
+            "confidence": 0.8919142442488268,
+            "margin": 0.8301788805850152
+          },
+          {
+            "task_id": "T0465",
+            "true": "Medium",
+            "predicted": "High",
+            "confidence": 0.6275976250614453,
+            "margin": 0.38949899178454384
+          }
+        ]
+      },
+      "grouped_protocol": {
+        "pooled_accuracy": 0.7328385899814471,
+        "pooled_macro_f1": 0.7024266992266992,
+        "evaluated_labels": [
+          "High",
+          "Low",
+          "Medium"
+        ],
+        "unevaluable_labels": [],
+        "per_class": [
+          {
+            "label": "High",
+            "precision": 0.9444444444444444,
+            "recall": 0.6296296296296297,
+            "f1": 0.7555555555555555,
+            "support": 108
+          },
+          {
+            "label": "Low",
+            "precision": 0.7881619937694704,
+            "recall": 0.8322368421052632,
+            "f1": 0.8096,
+            "support": 304
+          },
+          {
+            "label": "Medium",
+            "precision": 0.5068493150684932,
+            "recall": 0.5826771653543307,
+            "f1": 0.5421245421245421,
+            "support": 127
+          }
+        ],
+        "per_source": [
+          {
+            "source": "BIG-Bench-Hard",
+            "n": 16,
+            "true_labels": [
+              "High",
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.75,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 4
+              }
+            ]
+          },
+          {
+            "source": "HLD-Bench",
+            "n": 55,
+            "true_labels": [
+              "High",
+              "Medium"
+            ],
+            "accuracy": 0.2545454545454545,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 21
+              },
+              {
+                "predicted": "Low",
+                "count": 19
+              },
+              {
+                "predicted": "High",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "Hugging Face Creative Writing datasets",
+            "n": 70,
+            "true_labels": [
+              "Low"
+            ],
+            "accuracy": 0.9142857142857143,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 5
+              },
+              {
+                "predicted": "High",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "Natural Questions (NQ)",
+            "n": 35,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.8285714285714286,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 3
+              },
+              {
+                "predicted": "Medium",
+                "count": 3
+              }
+            ]
+          },
+          {
+            "source": "SWE-bench",
+            "n": 38,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.7368421052631579,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 9
+              },
+              {
+                "predicted": "Medium",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "TruthfulQA",
+            "n": 100,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.71,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 28
+              },
+              {
+                "predicted": "High",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "WMT translation",
+            "n": 49,
+            "true_labels": [
+              "Low"
+            ],
+            "accuracy": 0.9795918367346939,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "Xsum",
+            "n": 11,
+            "true_labels": [
+              "Medium"
+            ],
+            "accuracy": 0.6363636363636364,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 4
+              }
+            ]
+          },
+          {
+            "source": "cnn_dailymail",
+            "n": 18,
+            "true_labels": [
+              "Medium"
+            ],
+            "accuracy": 0.5555555555555556,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 8
+              }
+            ]
+          },
+          {
+            "source": "devpkprajapati/ai-system-design-instruct",
+            "n": 60,
+            "true_labels": [
+              "High"
+            ],
+            "accuracy": 1.0,
+            "label_covered_by_train": true,
+            "top_confusions": []
+          },
+          {
+            "source": "google-research-datasets (MBPP)",
+            "n": 20,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.95,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "mmlu",
+            "n": 28,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.6785714285714286,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 8
+              },
+              {
+                "predicted": "High",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "openai/gsm8k",
+            "n": 39,
+            "true_labels": [
+              "Medium"
+            ],
+            "accuracy": 0.358974358974359,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 25
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "RandomForest": {
+      "random_protocol": {
+        "validation_macro_f1": 0.7896428571428572,
+        "test_accuracy": 0.8313253012048193,
+        "test_macro_precision": 0.9043314500941619,
+        "test_macro_recall": 0.7808080808080807,
+        "test_macro_f1": 0.7967229902713774,
+        "test_ece": 0.16124497991967868,
+        "inference_ms_for_test_set": 12.502625002525747,
+        "per_class": [
+          {
+            "label": "High",
+            "precision": 0.9333333333333333,
+            "recall": 0.9333333333333333,
+            "f1": 0.9333333333333333,
+            "support": 15
+          },
+          {
+            "label": "Low",
+            "precision": 0.7796610169491526,
+            "recall": 1.0,
+            "f1": 0.8761904761904762,
+            "support": 46
+          },
+          {
+            "label": "Medium",
+            "precision": 1.0,
+            "recall": 0.4090909090909091,
+            "f1": 0.5806451612903226,
+            "support": 22
+          }
+        ],
+        "confusion_matrix": [
+          [
+            14,
+            1,
+            0
+          ],
+          [
+            0,
+            46,
+            0
+          ],
+          [
+            1,
+            12,
+            9
+          ]
+        ],
+        "errors": [
+          {
+            "task_id": "T0005",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.6566666666666666,
+            "margin": 0.46333333333333326
+          },
+          {
+            "task_id": "T0116",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.8,
+            "margin": 0.6900000000000001
+          },
+          {
+            "task_id": "T0185",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.51,
+            "margin": 0.14666666666666667
+          },
+          {
+            "task_id": "T0194",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.6233333333333333,
+            "margin": 0.33999999999999997
+          },
+          {
+            "task_id": "T0196",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.46,
+            "margin": 0.020000000000000018
+          },
+          {
+            "task_id": "T0200",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.5233333333333333,
+            "margin": 0.13999999999999996
+          },
+          {
+            "task_id": "T0235",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.63,
+            "margin": 0.39
+          },
+          {
+            "task_id": "T0297",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.44,
+            "margin": 0.053333333333333344
+          },
+          {
+            "task_id": "T0299",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.4533333333333333,
+            "margin": 0.08666666666666667
+          },
+          {
+            "task_id": "T0347",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.5366666666666666,
+            "margin": 0.15333333333333327
+          },
+          {
+            "task_id": "T0348",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.48,
+            "margin": 0.010000000000000009
+          },
+          {
+            "task_id": "T0429",
+            "true": "High",
+            "predicted": "Low",
+            "confidence": 0.44666666666666666,
+            "margin": 0.03999999999999998
+          },
+          {
+            "task_id": "T0449",
+            "true": "Medium",
+            "predicted": "High",
+            "confidence": 0.5,
+            "margin": 0.09999999999999998
+          },
+          {
+            "task_id": "T0465",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.5166666666666667,
+            "margin": 0.21666666666666673
+          }
+        ]
+      },
+      "grouped_protocol": {
+        "pooled_accuracy": 0.5807050092764379,
+        "pooled_macro_f1": 0.31191112808759863,
+        "evaluated_labels": [
+          "High",
+          "Low",
+          "Medium"
+        ],
+        "unevaluable_labels": [],
+        "per_class": [
+          {
+            "label": "High",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 108
+          },
+          {
+            "label": "Low",
+            "precision": 0.580078125,
+            "recall": 0.9769736842105263,
+            "f1": 0.7279411764705882,
+            "support": 304
+          },
+          {
+            "label": "Medium",
+            "precision": 0.5925925925925926,
+            "recall": 0.12598425196850394,
+            "f1": 0.2077922077922078,
+            "support": 127
+          }
+        ],
+        "per_source": [
+          {
+            "source": "BIG-Bench-Hard",
+            "n": 16,
+            "true_labels": [
+              "High",
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.4375,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 7
+              },
+              {
+                "predicted": "Medium",
+                "count": 2
+              }
+            ]
+          },
+          {
+            "source": "HLD-Bench",
+            "n": 55,
+            "true_labels": [
+              "High",
+              "Medium"
+            ],
+            "accuracy": 0.0,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 55
+              }
+            ]
+          },
+          {
+            "source": "Hugging Face Creative Writing datasets",
+            "n": 70,
+            "true_labels": [
+              "Low"
+            ],
+            "accuracy": 1.0,
+            "label_covered_by_train": true,
+            "top_confusions": []
+          },
+          {
+            "source": "Natural Questions (NQ)",
+            "n": 35,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.8857142857142857,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 4
+              }
+            ]
+          },
+          {
+            "source": "SWE-bench",
+            "n": 38,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.5526315789473685,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 16
+              },
+              {
+                "predicted": "Medium",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "TruthfulQA",
+            "n": 100,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.97,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 2
+              },
+              {
+                "predicted": "Medium",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "WMT translation",
+            "n": 49,
+            "true_labels": [
+              "Low"
+            ],
+            "accuracy": 0.9183673469387755,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 4
+              }
+            ]
+          },
+          {
+            "source": "Xsum",
+            "n": 11,
+            "true_labels": [
+              "Medium"
+            ],
+            "accuracy": 0.09090909090909091,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 10
+              }
+            ]
+          },
+          {
+            "source": "cnn_dailymail",
+            "n": 18,
+            "true_labels": [
+              "Medium"
+            ],
+            "accuracy": 0.1111111111111111,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 16
+              }
+            ]
+          },
+          {
+            "source": "devpkprajapati/ai-system-design-instruct",
+            "n": 60,
+            "true_labels": [
+              "High"
+            ],
+            "accuracy": 0.0,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 57
+              },
+              {
+                "predicted": "Medium",
+                "count": 3
+              }
+            ]
+          },
+          {
+            "source": "google-research-datasets (MBPP)",
+            "n": 20,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.95,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "mmlu",
+            "n": 28,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.6785714285714286,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 9
+              }
+            ]
+          },
+          {
+            "source": "openai/gsm8k",
+            "n": 39,
+            "true_labels": [
+              "Medium"
+            ],
+            "accuracy": 0.02564102564102564,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 38
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "SVM": {
+      "random_protocol": {
+        "validation_macro_f1": 0.8901838901838902,
+        "test_accuracy": 0.9156626506024096,
+        "test_macro_precision": 0.9044199986825637,
+        "test_macro_recall": 0.9097496706192358,
+        "test_macro_f1": 0.9043349506075705,
+        "test_ece": 0.021158674703638143,
+        "inference_ms_for_test_set": 3.1750000052852556,
+        "per_class": [
+          {
+            "label": "High",
+            "precision": 0.8823529411764706,
+            "recall": 1.0,
+            "f1": 0.9375,
+            "support": 15
+          },
+          {
+            "label": "Low",
+            "precision": 0.9361702127659575,
+            "recall": 0.9565217391304348,
+            "f1": 0.946236559139785,
+            "support": 46
+          },
+          {
+            "label": "Medium",
+            "precision": 0.8947368421052632,
+            "recall": 0.7727272727272727,
+            "f1": 0.8292682926829268,
+            "support": 22
+          }
+        ],
+        "confusion_matrix": [
+          [
+            15,
+            0,
+            0
+          ],
+          [
+            0,
+            44,
+            2
+          ],
+          [
+            2,
+            3,
+            17
+          ]
+        ],
+        "errors": [
+          {
+            "task_id": "T0005",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.782371255081535,
+            "margin": 0.5858708284807287
+          },
+          {
+            "task_id": "T0007",
+            "true": "Low",
+            "predicted": "Medium",
+            "confidence": 0.8877709298345468,
+            "margin": 0.7888679859345273
+          },
+          {
+            "task_id": "T0116",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.9515029226381605,
+            "margin": 0.9189636877886542
+          },
+          {
+            "task_id": "T0194",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.7069392911808997,
+            "margin": 0.4248869693881485
+          },
+          {
+            "task_id": "T0449",
+            "true": "Medium",
+            "predicted": "High",
+            "confidence": 0.973403809143181,
+            "margin": 0.9528428852420041
+          },
+          {
+            "task_id": "T0465",
+            "true": "Medium",
+            "predicted": "High",
+            "confidence": 0.5248408774471829,
+            "margin": 0.09903232784711297
+          },
+          {
+            "task_id": "T0540",
+            "true": "Low",
+            "predicted": "Medium",
+            "confidence": 0.5699871947286127,
+            "margin": 0.1550789095192477
+          }
+        ]
+      },
+      "grouped_protocol": {
+        "pooled_accuracy": 0.7142857142857143,
+        "pooled_macro_f1": 0.640175928726626,
+        "evaluated_labels": [
+          "High",
+          "Low",
+          "Medium"
+        ],
+        "unevaluable_labels": [],
+        "per_class": [
+          {
+            "label": "High",
+            "precision": 0.9818181818181818,
+            "recall": 0.5,
+            "f1": 0.6625766871165644,
+            "support": 108
+          },
+          {
+            "label": "Low",
+            "precision": 0.7092731829573935,
+            "recall": 0.930921052631579,
+            "f1": 0.8051209103840683,
+            "support": 304
+          },
+          {
+            "label": "Medium",
+            "precision": 0.5647058823529412,
+            "recall": 0.3779527559055118,
+            "f1": 0.4528301886792453,
+            "support": 127
+          }
+        ],
+        "per_source": [
+          {
+            "source": "BIG-Bench-Hard",
+            "n": 16,
+            "true_labels": [
+              "High",
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.8125,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 3
+              }
+            ]
+          },
+          {
+            "source": "HLD-Bench",
+            "n": 55,
+            "true_labels": [
+              "High",
+              "Medium"
+            ],
+            "accuracy": 0.07272727272727272,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 37
+              },
+              {
+                "predicted": "Medium",
+                "count": 14
+              }
+            ]
+          },
+          {
+            "source": "Hugging Face Creative Writing datasets",
+            "n": 70,
+            "true_labels": [
+              "Low"
+            ],
+            "accuracy": 0.9428571428571428,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 4
+              }
+            ]
+          },
+          {
+            "source": "Natural Questions (NQ)",
+            "n": 35,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.9142857142857143,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 3
+              }
+            ]
+          },
+          {
+            "source": "SWE-bench",
+            "n": 38,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.6842105263157895,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 12
+              }
+            ]
+          },
+          {
+            "source": "TruthfulQA",
+            "n": 100,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.87,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 12
+              },
+              {
+                "predicted": "Low",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "WMT translation",
+            "n": 49,
+            "true_labels": [
+              "Low"
+            ],
+            "accuracy": 0.9795918367346939,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "Xsum",
+            "n": 11,
+            "true_labels": [
+              "Medium"
+            ],
+            "accuracy": 0.36363636363636365,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 7
+              }
+            ]
+          },
+          {
+            "source": "cnn_dailymail",
+            "n": 18,
+            "true_labels": [
+              "Medium"
+            ],
+            "accuracy": 0.3888888888888889,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 11
+              }
+            ]
+          },
+          {
+            "source": "devpkprajapati/ai-system-design-instruct",
+            "n": 60,
+            "true_labels": [
+              "High"
+            ],
+            "accuracy": 0.9,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 6
+              }
+            ]
+          },
+          {
+            "source": "google-research-datasets (MBPP)",
+            "n": 20,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.95,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "mmlu",
+            "n": 28,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.75,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 3
+              },
+              {
+                "predicted": "Medium",
+                "count": 3
+              },
+              {
+                "predicted": "High",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "openai/gsm8k",
+            "n": 39,
+            "true_labels": [
+              "Medium"
+            ],
+            "accuracy": 0.10256410256410256,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 35
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
