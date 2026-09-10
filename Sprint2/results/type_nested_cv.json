@@ -1,0 +1,130 @@
+{
+  "dimension": "type",
+  "protocol": "nested_leave_one_source_out",
+  "C_grid": [
+    0.1,
+    1.0,
+    10.0,
+    100.0
+  ],
+  "nested_macro_f1": 0.7149323426603713,
+  "nested_accuracy": 0.7322834645669292,
+  "evaluated_labels": [
+    "Analytical/Logical Reasoning",
+    "Architecture & System Design",
+    "Coding & Debugging",
+    "Factual Q&A",
+    "Summarization"
+  ],
+  "unevaluable_labels": [
+    "Creative & Open-Ended Generation",
+    "Mathematical Reasoning",
+    "Translation"
+  ],
+  "selected_C_counts": {
+    "0.1": 2,
+    "1.0": 3,
+    "10.0": 3,
+    "100.0": 2
+  },
+  "modal_C": 1.0,
+  "per_fold": [
+    {
+      "held_out_source": "BIG-Bench-Hard",
+      "n": 16,
+      "selected_C": 1.0,
+      "accuracy": 1.0
+    },
+    {
+      "held_out_source": "HLD-Bench",
+      "n": 55,
+      "selected_C": 10.0,
+      "accuracy": 0.3090909090909091
+    },
+    {
+      "held_out_source": "Natural Questions (NQ)",
+      "n": 35,
+      "selected_C": 100.0,
+      "accuracy": 0.9142857142857143
+    },
+    {
+      "held_out_source": "SWE-bench",
+      "n": 38,
+      "selected_C": 1.0,
+      "accuracy": 0.631578947368421
+    },
+    {
+      "held_out_source": "TruthfulQA",
+      "n": 100,
+      "selected_C": 0.1,
+      "accuracy": 0.7
+    },
+    {
+      "held_out_source": "Xsum",
+      "n": 11,
+      "selected_C": 100.0,
+      "accuracy": 0.6363636363636364
+    },
+    {
+      "held_out_source": "cnn_dailymail",
+      "n": 18,
+      "selected_C": 10.0,
+      "accuracy": 0.4444444444444444
+    },
+    {
+      "held_out_source": "devpkprajapati/ai-system-design-instruct",
+      "n": 60,
+      "selected_C": 0.1,
+      "accuracy": 1.0
+    },
+    {
+      "held_out_source": "google-research-datasets (MBPP)",
+      "n": 20,
+      "selected_C": 1.0,
+      "accuracy": 1.0
+    },
+    {
+      "held_out_source": "mmlu",
+      "n": 28,
+      "selected_C": 10.0,
+      "accuracy": 0.8928571428571429
+    }
+  ],
+  "per_class": [
+    {
+      "label": "Analytical/Logical Reasoning",
+      "precision": 0.711864406779661,
+      "recall": 0.9333333333333333,
+      "f1": 0.8076923076923077,
+      "support": 45
+    },
+    {
+      "label": "Architecture & System Design",
+      "precision": 0.9743589743589743,
+      "recall": 0.6666666666666666,
+      "f1": 0.7916666666666666,
+      "support": 114
+    },
+    {
+      "label": "Coding & Debugging",
+      "precision": 0.8461538461538461,
+      "recall": 0.7586206896551724,
+      "f1": 0.8,
+      "support": 58
+    },
+    {
+      "label": "Factual Q&A",
+      "precision": 0.75,
+      "recall": 0.7555555555555555,
+      "f1": 0.7527675276752768,
+      "support": 135
+    },
+    {
+      "label": "Summarization",
+      "precision": 0.35714285714285715,
+      "recall": 0.5172413793103449,
+      "f1": 0.4225352112676056,
+      "support": 29
+    }
+  ]
+}

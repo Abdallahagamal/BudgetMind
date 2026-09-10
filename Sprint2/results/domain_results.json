@@ -1,0 +1,1046 @@
+{
+  "dimension": "domain",
+  "taxonomy_version": "1.0",
+  "embedding_model": "all-MiniLM-L6-v2",
+  "n_train": 377,
+  "n_validation": 80,
+  "n_test": 83,
+  "labels": [
+    "General Knowledge/Cross-Domain",
+    "Language & Communication",
+    "Mathematics & Quantitative",
+    "Software Engineering & Technology"
+  ],
+  "majority_baseline": {
+    "accuracy": 0.43373493975903615,
+    "macro_f1": 0.15126050420168066
+  },
+  "candidates": {
+    "LogisticRegression": {
+      "random_protocol": {
+        "validation_macro_f1": 0.9786959228135699,
+        "test_accuracy": 0.963855421686747,
+        "test_macro_precision": 0.9634453781512605,
+        "test_macro_recall": 0.9764957264957266,
+        "test_macro_f1": 0.9689096589339962,
+        "test_ece": 0.22199826898011235,
+        "inference_ms_for_test_set": 0.08537499525118619,
+        "per_class": [
+          {
+            "label": "General Knowledge/Cross-Domain",
+            "precision": 0.9714285714285714,
+            "recall": 0.9444444444444444,
+            "f1": 0.9577464788732394,
+            "support": 36
+          },
+          {
+            "label": "Language & Communication",
+            "precision": 0.8823529411764706,
+            "recall": 1.0,
+            "f1": 0.9375,
+            "support": 15
+          },
+          {
+            "label": "Mathematics & Quantitative",
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 6
+          },
+          {
+            "label": "Software Engineering & Technology",
+            "precision": 1.0,
+            "recall": 0.9615384615384616,
+            "f1": 0.9803921568627451,
+            "support": 26
+          }
+        ],
+        "confusion_matrix": [
+          [
+            34,
+            2,
+            0,
+            0
+          ],
+          [
+            0,
+            15,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            6,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            25
+          ]
+        ],
+        "errors": [
+          {
+            "task_id": "T0029",
+            "true": "General Knowledge/Cross-Domain",
+            "predicted": "Language & Communication",
+            "confidence": 0.4445046575700483,
+            "margin": 0.028638020639498385
+          },
+          {
+            "task_id": "T0297",
+            "true": "Software Engineering & Technology",
+            "predicted": "General Knowledge/Cross-Domain",
+            "confidence": 0.7663388822650736,
+            "margin": 0.6534743531262082
+          },
+          {
+            "task_id": "T0508",
+            "true": "General Knowledge/Cross-Domain",
+            "predicted": "Language & Communication",
+            "confidence": 0.5292402984953208,
+            "margin": 0.1815436840448738
+          }
+        ]
+      },
+      "grouped_protocol": {
+        "pooled_accuracy": 0.7012987012987013,
+        "pooled_macro_f1": 0.49133938236502334,
+        "evaluated_labels": [
+          "General Knowledge/Cross-Domain",
+          "Language & Communication",
+          "Mathematics & Quantitative",
+          "Software Engineering & Technology"
+        ],
+        "unevaluable_labels": [],
+        "per_class": [
+          {
+            "label": "General Knowledge/Cross-Domain",
+            "precision": 0.6350148367952523,
+            "recall": 0.9304347826086956,
+            "f1": 0.7548500881834215,
+            "support": 230
+          },
+          {
+            "label": "Language & Communication",
+            "precision": 0.7027027027027027,
+            "recall": 0.2736842105263158,
+            "f1": 0.3939393939393939,
+            "support": 95
+          },
+          {
+            "label": "Mathematics & Quantitative",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 40
+          },
+          {
+            "label": "Software Engineering & Technology",
+            "precision": 0.8414634146341463,
+            "recall": 0.7931034482758621,
+            "f1": 0.8165680473372781,
+            "support": 174
+          }
+        ],
+        "per_source": [
+          {
+            "source": "BIG-Bench-Hard",
+            "n": 16,
+            "true_labels": [
+              "General Knowledge/Cross-Domain"
+            ],
+            "accuracy": 1.0,
+            "label_covered_by_train": true,
+            "top_confusions": []
+          },
+          {
+            "source": "HLD-Bench",
+            "n": 55,
+            "true_labels": [
+              "Software Engineering & Technology"
+            ],
+            "accuracy": 0.6363636363636364,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "General Knowledge/Cross-Domain",
+                "count": 18
+              },
+              {
+                "predicted": "Language & Communication",
+                "count": 2
+              }
+            ]
+          },
+          {
+            "source": "Hugging Face Creative Writing datasets",
+            "n": 70,
+            "true_labels": [
+              "General Knowledge/Cross-Domain",
+              "Language & Communication"
+            ],
+            "accuracy": 0.35714285714285715,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "General Knowledge/Cross-Domain",
+                "count": 33
+              },
+              {
+                "predicted": "Software Engineering & Technology",
+                "count": 11
+              },
+              {
+                "predicted": "Language & Communication",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "Natural Questions (NQ)",
+            "n": 35,
+            "true_labels": [
+              "General Knowledge/Cross-Domain",
+              "Mathematics & Quantitative"
+            ],
+            "accuracy": 0.9714285714285714,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "General Knowledge/Cross-Domain",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "SWE-bench",
+            "n": 38,
+            "true_labels": [
+              "Software Engineering & Technology"
+            ],
+            "accuracy": 0.6052631578947368,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "General Knowledge/Cross-Domain",
+                "count": 15
+              }
+            ]
+          },
+          {
+            "source": "TruthfulQA",
+            "n": 100,
+            "true_labels": [
+              "General Knowledge/Cross-Domain"
+            ],
+            "accuracy": 0.93,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Language & Communication",
+                "count": 7
+              }
+            ]
+          },
+          {
+            "source": "WMT translation",
+            "n": 49,
+            "true_labels": [
+              "Language & Communication"
+            ],
+            "accuracy": 0.3877551020408163,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "General Knowledge/Cross-Domain",
+                "count": 25
+              },
+              {
+                "predicted": "Software Engineering & Technology",
+                "count": 5
+              }
+            ]
+          },
+          {
+            "source": "Xsum",
+            "n": 11,
+            "true_labels": [
+              "General Knowledge/Cross-Domain"
+            ],
+            "accuracy": 1.0,
+            "label_covered_by_train": true,
+            "top_confusions": []
+          },
+          {
+            "source": "cnn_dailymail",
+            "n": 18,
+            "true_labels": [
+              "General Knowledge/Cross-Domain"
+            ],
+            "accuracy": 1.0,
+            "label_covered_by_train": true,
+            "top_confusions": []
+          },
+          {
+            "source": "devpkprajapati/ai-system-design-instruct",
+            "n": 60,
+            "true_labels": [
+              "Software Engineering & Technology"
+            ],
+            "accuracy": 1.0,
+            "label_covered_by_train": true,
+            "top_confusions": []
+          },
+          {
+            "source": "google-research-datasets (MBPP)",
+            "n": 20,
+            "true_labels": [
+              "Software Engineering & Technology"
+            ],
+            "accuracy": 1.0,
+            "label_covered_by_train": true,
+            "top_confusions": []
+          },
+          {
+            "source": "mmlu",
+            "n": 28,
+            "true_labels": [
+              "General Knowledge/Cross-Domain",
+              "Software Engineering & Technology"
+            ],
+            "accuracy": 0.8571428571428571,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Software Engineering & Technology",
+                "count": 2
+              },
+              {
+                "predicted": "General Knowledge/Cross-Domain",
+                "count": 1
+              },
+              {
+                "predicted": "Mathematics & Quantitative",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "openai/gsm8k",
+            "n": 39,
+            "true_labels": [
+              "Mathematics & Quantitative"
+            ],
+            "accuracy": 0.0,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "General Knowledge/Cross-Domain",
+                "count": 30
+              },
+              {
+                "predicted": "Software Engineering & Technology",
+                "count": 8
+              },
+              {
+                "predicted": "Language & Communication",
+                "count": 1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "RandomForest": {
+      "random_protocol": {
+        "validation_macro_f1": 0.8485548562430852,
+        "test_accuracy": 0.9036144578313253,
+        "test_macro_precision": 0.9545454545454546,
+        "test_macro_recall": 0.8448717948717949,
+        "test_macro_f1": 0.8863095238095239,
+        "test_ece": 0.3152610441767069,
+        "inference_ms_for_test_set": 13.991332991281524,
+        "per_class": [
+          {
+            "label": "General Knowledge/Cross-Domain",
+            "precision": 0.8181818181818182,
+            "recall": 1.0,
+            "f1": 0.9,
+            "support": 36
+          },
+          {
+            "label": "Language & Communication",
+            "precision": 1.0,
+            "recall": 0.8666666666666667,
+            "f1": 0.9285714285714286,
+            "support": 15
+          },
+          {
+            "label": "Mathematics & Quantitative",
+            "precision": 1.0,
+            "recall": 0.6666666666666666,
+            "f1": 0.8,
+            "support": 6
+          },
+          {
+            "label": "Software Engineering & Technology",
+            "precision": 1.0,
+            "recall": 0.8461538461538461,
+            "f1": 0.9166666666666666,
+            "support": 26
+          }
+        ],
+        "confusion_matrix": [
+          [
+            36,
+            0,
+            0,
+            0
+          ],
+          [
+            2,
+            13,
+            0,
+            0
+          ],
+          [
+            2,
+            0,
+            4,
+            0
+          ],
+          [
+            4,
+            0,
+            0,
+            22
+          ]
+        ],
+        "errors": [
+          {
+            "task_id": "T0218",
+            "true": "Software Engineering & Technology",
+            "predicted": "General Knowledge/Cross-Domain",
+            "confidence": 0.39,
+            "margin": 0.016666666666666663
+          },
+          {
+            "task_id": "T0221",
+            "true": "Software Engineering & Technology",
+            "predicted": "General Knowledge/Cross-Domain",
+            "confidence": 0.44666666666666666,
+            "margin": 0.06
+          },
+          {
+            "task_id": "T0297",
+            "true": "Software Engineering & Technology",
+            "predicted": "General Knowledge/Cross-Domain",
+            "confidence": 0.5866666666666667,
+            "margin": 0.3433333333333333
+          },
+          {
+            "task_id": "T0347",
+            "true": "Mathematics & Quantitative",
+            "predicted": "General Knowledge/Cross-Domain",
+            "confidence": 0.45666666666666667,
+            "margin": 0.2033333333333333
+          },
+          {
+            "task_id": "T0348",
+            "true": "Mathematics & Quantitative",
+            "predicted": "General Knowledge/Cross-Domain",
+            "confidence": 0.46,
+            "margin": 0.23
+          },
+          {
+            "task_id": "T0515",
+            "true": "Language & Communication",
+            "predicted": "General Knowledge/Cross-Domain",
+            "confidence": 0.42,
+            "margin": 0.036666666666666625
+          },
+          {
+            "task_id": "T0524",
+            "true": "Language & Communication",
+            "predicted": "General Knowledge/Cross-Domain",
+            "confidence": 0.4766666666666667,
+            "margin": 0.11333333333333334
+          },
+          {
+            "task_id": "T0540",
+            "true": "Software Engineering & Technology",
+            "predicted": "General Knowledge/Cross-Domain",
+            "confidence": 0.4666666666666667,
+            "margin": 0.13
+          }
+        ]
+      },
+      "grouped_protocol": {
+        "pooled_accuracy": 0.43413729128014844,
+        "pooled_macro_f1": 0.18550269661112453,
+        "evaluated_labels": [
+          "General Knowledge/Cross-Domain",
+          "Language & Communication",
+          "Mathematics & Quantitative",
+          "Software Engineering & Technology"
+        ],
+        "unevaluable_labels": [],
+        "per_class": [
+          {
+            "label": "General Knowledge/Cross-Domain",
+            "precision": 0.4311023622047244,
+            "recall": 0.9521739130434783,
+            "f1": 0.5934959349593496,
+            "support": 230
+          },
+          {
+            "label": "Language & Communication",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 95
+          },
+          {
+            "label": "Mathematics & Quantitative",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 40
+          },
+          {
+            "label": "Software Engineering & Technology",
+            "precision": 0.5357142857142857,
+            "recall": 0.08620689655172414,
+            "f1": 0.1485148514851485,
+            "support": 174
+          }
+        ],
+        "per_source": [
+          {
+            "source": "BIG-Bench-Hard",
+            "n": 16,
+            "true_labels": [
+              "General Knowledge/Cross-Domain"
+            ],
+            "accuracy": 1.0,
+            "label_covered_by_train": true,
+            "top_confusions": []
+          },
+          {
+            "source": "HLD-Bench",
+            "n": 55,
+            "true_labels": [
+              "Software Engineering & Technology"
+            ],
+            "accuracy": 0.0,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "General Knowledge/Cross-Domain",
+                "count": 55
+              }
+            ]
+          },
+          {
+            "source": "Hugging Face Creative Writing datasets",
+            "n": 70,
+            "true_labels": [
+              "General Knowledge/Cross-Domain",
+              "Language & Communication"
+            ],
+            "accuracy": 0.34285714285714286,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "General Knowledge/Cross-Domain",
+                "count": 44
+              },
+              {
+                "predicted": "Software Engineering & Technology",
+                "count": 2
+              }
+            ]
+          },
+          {
+            "source": "Natural Questions (NQ)",
+            "n": 35,
+            "true_labels": [
+              "General Knowledge/Cross-Domain",
+              "Mathematics & Quantitative"
+            ],
+            "accuracy": 0.9714285714285714,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "General Knowledge/Cross-Domain",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "SWE-bench",
+            "n": 38,
+            "true_labels": [
+              "Software Engineering & Technology"
+            ],
+            "accuracy": 0.02631578947368421,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "General Knowledge/Cross-Domain",
+                "count": 37
+              }
+            ]
+          },
+          {
+            "source": "TruthfulQA",
+            "n": 100,
+            "true_labels": [
+              "General Knowledge/Cross-Domain"
+            ],
+            "accuracy": 0.9,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Software Engineering & Technology",
+                "count": 7
+              },
+              {
+                "predicted": "Language & Communication",
+                "count": 3
+              }
+            ]
+          },
+          {
+            "source": "WMT translation",
+            "n": 49,
+            "true_labels": [
+              "Language & Communication"
+            ],
+            "accuracy": 0.0,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "General Knowledge/Cross-Domain",
+                "count": 47
+              },
+              {
+                "predicted": "Software Engineering & Technology",
+                "count": 2
+              }
+            ]
+          },
+          {
+            "source": "Xsum",
+            "n": 11,
+            "true_labels": [
+              "General Knowledge/Cross-Domain"
+            ],
+            "accuracy": 1.0,
+            "label_covered_by_train": true,
+            "top_confusions": []
+          },
+          {
+            "source": "cnn_dailymail",
+            "n": 18,
+            "true_labels": [
+              "General Knowledge/Cross-Domain"
+            ],
+            "accuracy": 1.0,
+            "label_covered_by_train": true,
+            "top_confusions": []
+          },
+          {
+            "source": "devpkprajapati/ai-system-design-instruct",
+            "n": 60,
+            "true_labels": [
+              "Software Engineering & Technology"
+            ],
+            "accuracy": 0.16666666666666666,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "General Knowledge/Cross-Domain",
+                "count": 50
+              }
+            ]
+          },
+          {
+            "source": "google-research-datasets (MBPP)",
+            "n": 20,
+            "true_labels": [
+              "Software Engineering & Technology"
+            ],
+            "accuracy": 0.2,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "General Knowledge/Cross-Domain",
+                "count": 16
+              }
+            ]
+          },
+          {
+            "source": "mmlu",
+            "n": 28,
+            "true_labels": [
+              "General Knowledge/Cross-Domain",
+              "Software Engineering & Technology"
+            ],
+            "accuracy": 0.9285714285714286,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "General Knowledge/Cross-Domain",
+                "count": 1
+              },
+              {
+                "predicted": "Software Engineering & Technology",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "openai/gsm8k",
+            "n": 39,
+            "true_labels": [
+              "Mathematics & Quantitative"
+            ],
+            "accuracy": 0.0,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "General Knowledge/Cross-Domain",
+                "count": 38
+              },
+              {
+                "predicted": "Software Engineering & Technology",
+                "count": 1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "SVM": {
+      "random_protocol": {
+        "validation_macro_f1": 0.9864788732394366,
+        "test_accuracy": 0.9879518072289156,
+        "test_macro_precision": 0.9932432432432432,
+        "test_macro_recall": 0.9903846153846154,
+        "test_macro_f1": 0.9916733816814397,
+        "test_ece": 0.026137996081796143,
+        "inference_ms_for_test_set": 3.4517919993959367,
+        "per_class": [
+          {
+            "label": "General Knowledge/Cross-Domain",
+            "precision": 0.972972972972973,
+            "recall": 1.0,
+            "f1": 0.9863013698630136,
+            "support": 36
+          },
+          {
+            "label": "Language & Communication",
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 15
+          },
+          {
+            "label": "Mathematics & Quantitative",
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 6
+          },
+          {
+            "label": "Software Engineering & Technology",
+            "precision": 1.0,
+            "recall": 0.9615384615384616,
+            "f1": 0.9803921568627451,
+            "support": 26
+          }
+        ],
+        "confusion_matrix": [
+          [
+            36,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            15,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            6,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            25
+          ]
+        ],
+        "errors": [
+          {
+            "task_id": "T0297",
+            "true": "Software Engineering & Technology",
+            "predicted": "General Knowledge/Cross-Domain",
+            "confidence": 0.9899209800823875,
+            "margin": 0.983509999960544
+          }
+        ]
+      },
+      "grouped_protocol": {
+        "pooled_accuracy": 0.62708719851577,
+        "pooled_macro_f1": 0.36882601141722515,
+        "evaluated_labels": [
+          "General Knowledge/Cross-Domain",
+          "Language & Communication",
+          "Mathematics & Quantitative",
+          "Software Engineering & Technology"
+        ],
+        "unevaluable_labels": [],
+        "per_class": [
+          {
+            "label": "General Knowledge/Cross-Domain",
+            "precision": 0.554726368159204,
+            "recall": 0.9695652173913043,
+            "f1": 0.7056962025316456,
+            "support": 230
+          },
+          {
+            "label": "Language & Communication",
+            "precision": 0.14285714285714285,
+            "recall": 0.010526315789473684,
+            "f1": 0.0196078431372549,
+            "support": 95
+          },
+          {
+            "label": "Mathematics & Quantitative",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 40
+          },
+          {
+            "label": "Software Engineering & Technology",
+            "precision": 0.8769230769230769,
+            "recall": 0.6551724137931034,
+            "f1": 0.75,
+            "support": 174
+          }
+        ],
+        "per_source": [
+          {
+            "source": "BIG-Bench-Hard",
+            "n": 16,
+            "true_labels": [
+              "General Knowledge/Cross-Domain"
+            ],
+            "accuracy": 1.0,
+            "label_covered_by_train": true,
+            "top_confusions": []
+          },
+          {
+            "source": "HLD-Bench",
+            "n": 55,
+            "true_labels": [
+              "Software Engineering & Technology"
+            ],
+            "accuracy": 0.2909090909090909,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "General Knowledge/Cross-Domain",
+                "count": 37
+              },
+              {
+                "predicted": "Language & Communication",
+                "count": 2
+              }
+            ]
+          },
+          {
+            "source": "Hugging Face Creative Writing datasets",
+            "n": 70,
+            "true_labels": [
+              "General Knowledge/Cross-Domain",
+              "Language & Communication"
+            ],
+            "accuracy": 0.3142857142857143,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "General Knowledge/Cross-Domain",
+                "count": 39
+              },
+              {
+                "predicted": "Software Engineering & Technology",
+                "count": 9
+              }
+            ]
+          },
+          {
+            "source": "Natural Questions (NQ)",
+            "n": 35,
+            "true_labels": [
+              "General Knowledge/Cross-Domain",
+              "Mathematics & Quantitative"
+            ],
+            "accuracy": 0.9714285714285714,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "General Knowledge/Cross-Domain",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "SWE-bench",
+            "n": 38,
+            "true_labels": [
+              "Software Engineering & Technology"
+            ],
+            "accuracy": 0.5,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "General Knowledge/Cross-Domain",
+                "count": 19
+              }
+            ]
+          },
+          {
+            "source": "TruthfulQA",
+            "n": 100,
+            "true_labels": [
+              "General Knowledge/Cross-Domain"
+            ],
+            "accuracy": 0.95,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Language & Communication",
+                "count": 4
+              },
+              {
+                "predicted": "Software Engineering & Technology",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "WMT translation",
+            "n": 49,
+            "true_labels": [
+              "Language & Communication"
+            ],
+            "accuracy": 0.02040816326530612,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "General Knowledge/Cross-Domain",
+                "count": 45
+              },
+              {
+                "predicted": "Software Engineering & Technology",
+                "count": 3
+              }
+            ]
+          },
+          {
+            "source": "Xsum",
+            "n": 11,
+            "true_labels": [
+              "General Knowledge/Cross-Domain"
+            ],
+            "accuracy": 1.0,
+            "label_covered_by_train": true,
+            "top_confusions": []
+          },
+          {
+            "source": "cnn_dailymail",
+            "n": 18,
+            "true_labels": [
+              "General Knowledge/Cross-Domain"
+            ],
+            "accuracy": 1.0,
+            "label_covered_by_train": true,
+            "top_confusions": []
+          },
+          {
+            "source": "devpkprajapati/ai-system-design-instruct",
+            "n": 60,
+            "true_labels": [
+              "Software Engineering & Technology"
+            ],
+            "accuracy": 1.0,
+            "label_covered_by_train": true,
+            "top_confusions": []
+          },
+          {
+            "source": "google-research-datasets (MBPP)",
+            "n": 20,
+            "true_labels": [
+              "Software Engineering & Technology"
+            ],
+            "accuracy": 0.95,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "General Knowledge/Cross-Domain",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "mmlu",
+            "n": 28,
+            "true_labels": [
+              "General Knowledge/Cross-Domain",
+              "Software Engineering & Technology"
+            ],
+            "accuracy": 0.9642857142857143,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "General Knowledge/Cross-Domain",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "openai/gsm8k",
+            "n": 39,
+            "true_labels": [
+              "Mathematics & Quantitative"
+            ],
+            "accuracy": 0.0,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "General Knowledge/Cross-Domain",
+                "count": 36
+              },
+              {
+                "predicted": "Software Engineering & Technology",
+                "count": 3
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
