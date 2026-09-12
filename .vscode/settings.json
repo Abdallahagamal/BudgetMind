@@ -1,0 +1,7 @@
+{
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/Sprint2/src",
+    "${workspaceFolder}/Sprint2",
+    "${workspaceFolder}/Sprint1"
+  ]
+}

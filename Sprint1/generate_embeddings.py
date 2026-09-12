@@ -1,3 +1,12 @@
+'''
+cd d:\BudgetMind\BudgetMind\Sprint1
+python test_embedding_pipeline.py
+python generate_embeddings.py
+python generate_embeddings.py --data-dir Label --splits labeled_dataset --output-dir embeddings_output
+
+
+'''
+
 from __future__ import annotations
 
 import argparse
@@ -164,18 +173,42 @@ class EmbeddingPipeline:
 
 
 
+def _default_data_dir() -> Path:
+    if Path("sample_data").exists():
+        return Path("sample_data")
+    cand = Path(__file__).resolve().parent / "budgetmind_embeddings" / "sample_data"
+    if cand.exists():
+        return cand
+    cand_parent = Path(__file__).resolve().parents[1] / "sample_data"
+    if cand_parent.exists():
+        return cand_parent
+    return Path("sample_data")
+
+
+def _default_output_dir() -> Path:
+    if Path("sample_data").exists() or Path("embeddings_output").exists():
+        return Path("embeddings_output")
+    cand = Path(__file__).resolve().parent / "budgetmind_embeddings" / "embeddings_output"
+    if cand.parent.exists():
+        return cand
+    cand_parent = Path(__file__).resolve().parents[1] / "embeddings_output"
+    if cand_parent.parent.exists():
+        return cand_parent
+    return Path("embeddings_output")
+
+
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     p = argparse.ArgumentParser(
         description="Generate task embeddings from an existing labeled/split dataset "
                     "(BudgetMind Week 1, Member 5 scope only)."
     )
     p.add_argument(
-        "--data-dir", type=Path, default=Path("sample_data"),
+        "--data-dir", type=Path, default=_default_data_dir(),
         help="Directory containing train.jsonl / validation.jsonl / test.jsonl "
              "produced by Members 1-4. Defaults to the bundled sample fixtures.",
     )
     p.add_argument(
-        "--output-dir", type=Path, default=Path("embeddings_output"),
+        "--output-dir", type=Path, default=_default_output_dir(),
         help="Directory to write embedding artifact files to.",
     )
     p.add_argument("--model-name", type=str, default=DEFAULT_MODEL_NAME)
