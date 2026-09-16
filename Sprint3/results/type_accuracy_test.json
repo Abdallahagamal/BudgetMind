@@ -1,0 +1,10 @@
+{
+  "dimension": "type",
+  "all_checks_passed": true,
+  "baseline": {
+    "live_accuracy": 0.963855421686747,
+    "live_macro_f1": 0.9615384615384616,
+    "recorded_accuracy": 0.963855421686747,
+    "recorded_macro_f1": 0.9612179487179487
+  }
+}

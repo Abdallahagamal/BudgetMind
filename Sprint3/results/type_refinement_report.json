@@ -1,0 +1,444 @@
+{
+  "dimension": "type",
+  "selected_calibration": "sigmoid_cv3",
+  "selection_rationale": "Restricted a priori to 'sigmoid' calibration (small per-class sample, esp. Summarization n=29, makes isotonic prone to overfitting), then picked lowest validation ECE within that family.",
+  "models": {
+    "baseline_uncalibrated": {
+      "test_accuracy": 0.963855421686747,
+      "test_macro_precision": 0.953125,
+      "test_macro_recall": 0.9821428571428572,
+      "test_macro_f1": 0.9615384615384616,
+      "test_ece": 0.30773576890844623,
+      "inference_ms_for_test_set": 0.4657004028558731,
+      "margin_gate": [
+        {
+          "min_margin": 0.0,
+          "admitted": 83,
+          "admitted_pct": 1.0,
+          "accuracy_among_admitted": 0.963855421686747
+        },
+        {
+          "min_margin": 0.3,
+          "admitted": 70,
+          "admitted_pct": 0.8433734939759037,
+          "accuracy_among_admitted": 1.0
+        },
+        {
+          "min_margin": 0.5,
+          "admitted": 56,
+          "admitted_pct": 0.6746987951807228,
+          "accuracy_among_admitted": 1.0
+        }
+      ],
+      "per_class": [
+        {
+          "label": "Analytical/Logical Reasoning",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 7
+        },
+        {
+          "label": "Architecture & System Design",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 17
+        },
+        {
+          "label": "Coding & Debugging",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 8
+        },
+        {
+          "label": "Creative & Open-Ended Generation",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 11
+        },
+        {
+          "label": "Factual Q&A",
+          "precision": 1.0,
+          "recall": 0.8571428571428571,
+          "f1": 0.9230769230769231,
+          "support": 21
+        },
+        {
+          "label": "Mathematical Reasoning",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 6
+        },
+        {
+          "label": "Summarization",
+          "precision": 0.625,
+          "recall": 1.0,
+          "f1": 0.7692307692307693,
+          "support": 5
+        },
+        {
+          "label": "Translation",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 8
+        }
+      ]
+    },
+    "sigmoid_cv3": {
+      "test_accuracy": 0.963855421686747,
+      "test_macro_precision": 0.9573863636363636,
+      "test_macro_recall": 0.944047619047619,
+      "test_macro_f1": 0.9496124031007751,
+      "test_ece": 0.116875885910715,
+      "inference_ms_for_test_set": 2.99840047955513,
+      "margin_gate": [
+        {
+          "min_margin": 0.0,
+          "admitted": 83,
+          "admitted_pct": 1.0,
+          "accuracy_among_admitted": 0.963855421686747
+        },
+        {
+          "min_margin": 0.3,
+          "admitted": 78,
+          "admitted_pct": 0.9397590361445783,
+          "accuracy_among_admitted": 1.0
+        },
+        {
+          "min_margin": 0.5,
+          "admitted": 76,
+          "admitted_pct": 0.9156626506024096,
+          "accuracy_among_admitted": 1.0
+        }
+      ],
+      "per_class": [
+        {
+          "label": "Analytical/Logical Reasoning",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 7
+        },
+        {
+          "label": "Architecture & System Design",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 17
+        },
+        {
+          "label": "Coding & Debugging",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 8
+        },
+        {
+          "label": "Creative & Open-Ended Generation",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 11
+        },
+        {
+          "label": "Factual Q&A",
+          "precision": 0.9090909090909091,
+          "recall": 0.9523809523809523,
+          "f1": 0.9302325581395349,
+          "support": 21
+        },
+        {
+          "label": "Mathematical Reasoning",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 6
+        },
+        {
+          "label": "Summarization",
+          "precision": 0.75,
+          "recall": 0.6,
+          "f1": 0.6666666666666666,
+          "support": 5
+        },
+        {
+          "label": "Translation",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 8
+        }
+      ]
+    },
+    "sigmoid_cv5": {
+      "test_accuracy": 0.9759036144578314,
+      "test_macro_precision": 0.9784226190476191,
+      "test_macro_recall": 0.969047619047619,
+      "test_macro_f1": 0.9718253968253968,
+      "test_ece": 0.14875017849236247,
+      "inference_ms_for_test_set": 5.026600323617458,
+      "margin_gate": [
+        {
+          "min_margin": 0.0,
+          "admitted": 83,
+          "admitted_pct": 1.0,
+          "accuracy_among_admitted": 0.9759036144578314
+        },
+        {
+          "min_margin": 0.3,
+          "admitted": 78,
+          "admitted_pct": 0.9397590361445783,
+          "accuracy_among_admitted": 1.0
+        },
+        {
+          "min_margin": 0.5,
+          "admitted": 76,
+          "admitted_pct": 0.9156626506024096,
+          "accuracy_among_admitted": 1.0
+        }
+      ],
+      "per_class": [
+        {
+          "label": "Analytical/Logical Reasoning",
+          "precision": 0.875,
+          "recall": 1.0,
+          "f1": 0.9333333333333333,
+          "support": 7
+        },
+        {
+          "label": "Architecture & System Design",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 17
+        },
+        {
+          "label": "Coding & Debugging",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 8
+        },
+        {
+          "label": "Creative & Open-Ended Generation",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 11
+        },
+        {
+          "label": "Factual Q&A",
+          "precision": 0.9523809523809523,
+          "recall": 0.9523809523809523,
+          "f1": 0.9523809523809523,
+          "support": 21
+        },
+        {
+          "label": "Mathematical Reasoning",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 6
+        },
+        {
+          "label": "Summarization",
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.8888888888888888,
+          "support": 5
+        },
+        {
+          "label": "Translation",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 8
+        }
+      ]
+    },
+    "isotonic_cv3": {
+      "test_accuracy": 0.963855421686747,
+      "test_macro_precision": 0.9730113636363636,
+      "test_macro_recall": 0.944047619047619,
+      "test_macro_f1": 0.9516957364341085,
+      "test_ece": 0.05172117835691775,
+      "inference_ms_for_test_set": 4.968499764800072,
+      "margin_gate": [
+        {
+          "min_margin": 0.0,
+          "admitted": 83,
+          "admitted_pct": 1.0,
+          "accuracy_among_admitted": 0.963855421686747
+        },
+        {
+          "min_margin": 0.3,
+          "admitted": 80,
+          "admitted_pct": 0.963855421686747,
+          "accuracy_among_admitted": 0.9875
+        },
+        {
+          "min_margin": 0.5,
+          "admitted": 78,
+          "admitted_pct": 0.9397590361445783,
+          "accuracy_among_admitted": 1.0
+        }
+      ],
+      "per_class": [
+        {
+          "label": "Analytical/Logical Reasoning",
+          "precision": 0.875,
+          "recall": 1.0,
+          "f1": 0.9333333333333333,
+          "support": 7
+        },
+        {
+          "label": "Architecture & System Design",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 17
+        },
+        {
+          "label": "Coding & Debugging",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 8
+        },
+        {
+          "label": "Creative & Open-Ended Generation",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 11
+        },
+        {
+          "label": "Factual Q&A",
+          "precision": 0.9090909090909091,
+          "recall": 0.9523809523809523,
+          "f1": 0.9302325581395349,
+          "support": 21
+        },
+        {
+          "label": "Mathematical Reasoning",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 6
+        },
+        {
+          "label": "Summarization",
+          "precision": 1.0,
+          "recall": 0.6,
+          "f1": 0.75,
+          "support": 5
+        },
+        {
+          "label": "Translation",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 8
+        }
+      ]
+    },
+    "isotonic_cv5": {
+      "test_accuracy": 0.9397590361445783,
+      "test_macro_precision": 0.921875,
+      "test_macro_recall": 0.9321428571428572,
+      "test_macro_f1": 0.9264227642276424,
+      "test_ece": 0.04613353925097992,
+      "inference_ms_for_test_set": 8.044400252401829,
+      "margin_gate": [
+        {
+          "min_margin": 0.0,
+          "admitted": 83,
+          "admitted_pct": 1.0,
+          "accuracy_among_admitted": 0.9397590361445783
+        },
+        {
+          "min_margin": 0.3,
+          "admitted": 78,
+          "admitted_pct": 0.9397590361445783,
+          "accuracy_among_admitted": 1.0
+        },
+        {
+          "min_margin": 0.5,
+          "admitted": 77,
+          "admitted_pct": 0.927710843373494,
+          "accuracy_among_admitted": 1.0
+        }
+      ],
+      "per_class": [
+        {
+          "label": "Analytical/Logical Reasoning",
+          "precision": 0.875,
+          "recall": 1.0,
+          "f1": 0.9333333333333333,
+          "support": 7
+        },
+        {
+          "label": "Architecture & System Design",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 17
+        },
+        {
+          "label": "Coding & Debugging",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 8
+        },
+        {
+          "label": "Creative & Open-Ended Generation",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 11
+        },
+        {
+          "label": "Factual Q&A",
+          "precision": 0.9,
+          "recall": 0.8571428571428571,
+          "f1": 0.8780487804878049,
+          "support": 21
+        },
+        {
+          "label": "Mathematical Reasoning",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 6
+        },
+        {
+          "label": "Summarization",
+          "precision": 0.6,
+          "recall": 0.6,
+          "f1": 0.6,
+          "support": 5
+        },
+        {
+          "label": "Translation",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 8
+        }
+      ]
+    }
+  },
+  "delta_test_macro_f1": -0.01192605843768646,
+  "delta_test_ece": -0.1908598829977312,
+  "contract_check": {
+    "label": "Factual Q&A",
+    "confidence": 0.9075,
+    "margin": 0.8568
+  }
+}
