@@ -1,15 +1,4 @@
-{"task_id": "task_0001", "taxonomy_version": "1.0",
- "type": "Coding & Debugging", "complexity": "Low",
- "domain": "General Knowledge/Cross-Domain",
- "type_confidence": 0.2191,
- "complexity_confidence": 0.6163,
- "domain_confidence": 0.5017,
- "type_margin": 0.0288,
- "complexity_margin": 0.2869,
- "domain_margin": 0.2663,
- "embedding_ref": "emb:task_0001",
- "classified_at": "2026-09-12T17:31:48Z",
- "from_cache": false}
+{"task_id": "task_0001", "taxonomy_version": "1.0","type": "Coding & Debugging", "complexity": "Low","domain": "General Knowledge/Cross-Domain","type_confidence": 0.2191,"complexity_confidence": 0.6163,"domain_confidence": 0.5017,"type_margin": 0.0288,"complexity_margin": 0.2869,"domain_margin": 0.2663,"embedding_ref": "emb:task_0001","classified_at": "2026-09-12T17:31:48Z","from_cache": false}
 {"task_id": "task_0002", "taxonomy_version": "1.0", "type": "Creative & Open-Ended Generation",
  "complexity": "High", "domain": "Software Engineering & Technology", "type_confidence": 0.3266, "complexity_confidence": 0.3502, "domain_confidence": 0.3407, "type_margin": 0.1321, "complexity_margin": 0.0165, "domain_margin": 0.0099, "embedding_ref": "emb:task_0002", "classified_at": "2026-09-12T17:31:48Z", "from_cache": false}
 {"task_id": "task_0003", "taxonomy_version": "1.0", "type": "Architecture & System Design", "complexity": "High", "domain": "Software Engineering & Technology",

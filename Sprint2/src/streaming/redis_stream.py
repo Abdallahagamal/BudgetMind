@@ -162,6 +162,33 @@ class RedisStreamConsumer:
                     continue
                 yield StreamMessage(message_id=message_id, task_id=task_id, embedding=embedding)
 
+    def read_pending(self, count: int | None = None) -> Iterator[StreamMessage]:
+        try:
+            response = self._client.xreadgroup(
+                groupname=self._config.group_name,
+                consumername=self._config.consumer_name,
+                streams={self._config.stream_name: "0"},
+                count=count or self._config.batch_size,
+                block=0,
+            )
+        except redis.exceptions.ConnectionError as exc:
+            raise RedisConnectionUnavailable(
+                f"could not reach Redis at {self._config.host}:{self._config.port}"
+            ) from exc
+
+        if not response:
+            return
+
+        for _stream_name, entries in response:
+            for message_id, fields in entries:
+                try:
+                    task_id, embedding = _decode(fields)
+                except MalformedMessageError:
+                    logger.warning("dropping malformed pending message %s: %r", message_id, fields)
+                    self.ack(message_id)
+                    continue
+                yield StreamMessage(message_id=message_id, task_id=task_id, embedding=embedding)
+
     def ack(self, message_id: str) -> None:
         self._client.xack(self._config.stream_name, self._config.group_name, message_id)
 

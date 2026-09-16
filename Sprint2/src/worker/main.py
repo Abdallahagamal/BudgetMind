@@ -9,14 +9,14 @@ _SRC_DIR = Path(__file__).resolve().parents[1]
 if str(_SRC_DIR) not in sys.path:
     sys.path.insert(0, str(_SRC_DIR))
 
-from service.classification_service import ClassificationService  # noqa: E402
-from streaming.redis_stream import RedisStreamConsumer  # noqa: E402
-from worker.classification_worker import ClassificationWorker, DEFAULT_OUTPUT_PATH  # noqa: E402
+from service.classification_service import ClassificationService
+from streaming.redis_stream import RedisStreamConsumer
+from worker.classification_worker import ClassificationWorker, DEFAULT_OUTPUT_PATH
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="BudgetMind Classification Worker (Member 5)"
+        description="BudgetMind Classification Worker"
     )
     parser.add_argument(
         "--output",
@@ -40,10 +40,7 @@ def main() -> None:
         format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
     )
 
-    # Initialize consumer (uses environment variables via RedisStreamConfig)
     consumer = RedisStreamConsumer()
-
-    # Initialize in-process classification service (loads the 3 .pkl models once)
     service = ClassificationService()
 
     worker = ClassificationWorker(

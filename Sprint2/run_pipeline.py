@@ -8,7 +8,6 @@ import socket
 import sys
 from pathlib import Path
 
-# Add Sprint2/src to sys.path so imports work regardless of launch directory
 _CURRENT_DIR = Path(__file__).resolve().parent
 _SRC_DIR = _CURRENT_DIR / "src"
 
@@ -18,7 +17,7 @@ for _p in (str(_SRC_DIR), str(_CURRENT_DIR), str(_CURRENT_DIR.parent)):
 
 REPO_ROOT = _CURRENT_DIR.parent
 
-import redis 
+import redis
 
 try:
     from service.classification_service import ClassificationService  
@@ -50,7 +49,6 @@ logger = logging.getLogger("budgetmind.pipeline")
 
 
 def get_default_embeddings_dir() -> Path:
-    """Locate the default embeddings directory, prioritizing embeddings_output_testing."""
     cand1 = REPO_ROOT / "Sprint1" / "budgetmind_embeddings" / "embeddings_output_testing"
     if cand1.exists():
         return cand1
@@ -61,7 +59,6 @@ def get_default_embeddings_dir() -> Path:
 
 
 def is_redis_available(host: str, port: int) -> bool:
-    """Quickly probe if Redis port is open without hanging on retries."""
     try:
         with socket.create_connection((host, port), timeout=0.3):
             return True
@@ -70,7 +67,6 @@ def is_redis_available(host: str, port: int) -> bool:
 
 
 def get_redis_client(config: RedisStreamConfig, force_fake: bool = False) -> redis.Redis:
-    """Connect to live Redis if running; otherwise fall back to fakeredis."""
     if not force_fake and is_redis_available(config.host, config.port):
         try:
             client = redis.Redis(
@@ -95,7 +91,7 @@ def get_redis_client(config: RedisStreamConfig, force_fake: bool = False) -> red
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="BudgetMind Sprint 2 Pipeline: Ingest embeddings into Redis Stream and run Classification Worker"
+        description="BudgetMind Sprint 2 Pipeline"
     )
     parser.add_argument(
         "--embeddings-dir",
@@ -107,7 +103,7 @@ def parse_args() -> argparse.Namespace:
         "--splits",
         type=str,
         default="train,validation",
-        help="Comma-separated list of splits to process (e.g., 'train,validation' or 'train,validation,test')",
+        help="Comma-separated list of splits to process",
     )
     parser.add_argument(
         "--output",
@@ -146,14 +142,12 @@ def main() -> None:
         args.output.unlink()
         logger.info("Cleared previous output file: %s", args.output)
 
-    # 1. Setup Redis Queue with fast block timeout for batch pipeline
     stream_config = RedisStreamConfig(block_ms=1000)
     redis_client = get_redis_client(stream_config, force_fake=args.fake)
 
     publisher = RedisStreamPublisher(config=stream_config, client=redis_client)
     consumer = RedisStreamConsumer(config=stream_config, client=redis_client)
 
-    # 2. Ingest embeddings and publish to Redis Stream
     total_published = 0
     split_counts: dict[str, int] = {}
 
@@ -191,7 +185,6 @@ def main() -> None:
         consumer.close()
         return
 
-    # 3. Initialize Classification Service & Worker
     logger.info("Initializing ClassificationService (in-process)...")
     service = ClassificationService()
 
@@ -201,7 +194,6 @@ def main() -> None:
         output_path=args.output,
     )
 
-    # 4. Drain the queue and process all published tasks
     logger.info("Worker processing %d published task(s)...", total_published)
     total_processed = 0
 
@@ -213,7 +205,6 @@ def main() -> None:
 
     consumer.close()
 
-    # 5. Pipeline Summary
     print("\n" + "=" * 65)
     print("           BUDGETMIND SPRINT 2 PIPELINE SUMMARY           ")
     print("=" * 65)
@@ -224,7 +215,6 @@ def main() -> None:
     print(f"  - Task profiles saved to: {args.output}")
     print("=" * 65)
 
-    # Display sample profiles from output
     if args.output.exists():
         with open(args.output, "r", encoding="utf-8") as f:
             all_lines = [json.loads(line) for line in f if line.strip()]
