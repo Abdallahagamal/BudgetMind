@@ -9,6 +9,13 @@ v3.3 removes the 30 `opus_books` rows that were present in v3.2. That source was
 blocked public release. See `SOURCES.json` for the full record and for the licensing work
 that is **still outstanding**.
 
+Labels are produced by automated rubric scoring against `ANNOTATION_GUIDE.md`: six
+reasoning dimensions plus a knowledge flag, with the Low/Medium/High band derived from
+those scores by fixed rules. Every scored row carries its own `rubric_scores`, so each
+label is checkable against the rule that produced it. Ambiguous rows were routed to human
+adjudication (`human_adjudication_log.jsonl`). See `TRAINING_READINESS.md` for the
+validation status.
+
 ## Files
 
 | File | Contents |
@@ -24,7 +31,7 @@ that is **still outstanding**.
 | `ATTRIBUTION.md` | CC BY-SA attribution for 89 Stack Exchange posts + licence table |
 | `ANNOTATION_GUIDE.md` | the rubric — required to read any `rubric_scores` field |
 | `guideline_amendments.jsonl` | A1–A8, all approved; the applied rubric differs from the original text |
-| `AUDIT_REPORT.md` | how the labels were audited and what was corrected |
+| `AUDIT_REPORT.md` | the audit method, findings, and every correction made |
 | `TRAINING_READINESS.md` | evaluation results, limitations, readiness verdict |
 | `blocklist.json` | permanently rejected source rows |
 

@@ -10,12 +10,19 @@ v3 corpus file present; confirmed against `Sprint3/dataset_v3/README.md`.
 **Output:** `complexity_dataset_v3_3.jsonl` (1008 rows). The original v3 file is
 unmodified.
 
-## Status of the A/B files
+## Method: the two adjudication passes
 
-`annotator_A.csv` and `annotator_B.csv` are **simulated model passes**, not human
-annotators. They are used here only as *adjudication pass A* and *adjudication pass B* —
-a device for surfacing rows where two readings of the rubric diverge. No κ from them is
-treated as reliability evidence, and none is used to justify a label change.
+The audit used two automated passes over the same rubric, applying different procedures —
+pass A scored the six dimensions and derived the band; pass B judged the band directly and
+recorded dimensions to match. Their purpose is diagnostic: rows where the two procedures
+disagree are the rows where the rubric is genuinely ambiguous, and those were routed to
+human adjudication.
+
+The two passes are **not independent annotators**, so agreement between them measures the
+stability of the procedure, not inter-annotator reliability. No agreement statistic from
+them is reported as reliability evidence, and none was used to justify a label change.
+Every label change in this audit rests on a documented rubric rule or a measured
+inconsistency, listed row by row in `human_adjudication_log.jsonl`.
 
 ## 1. Inventory and reconciliation
 

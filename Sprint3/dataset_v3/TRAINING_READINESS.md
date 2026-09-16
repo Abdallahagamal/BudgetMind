@@ -9,6 +9,24 @@
 Sprint 1 and Sprint 2 are unmodified. The runner imports `Sprint2/src` and only redirects
 the embeddings directory, so the committed pipeline is reused as-is.
 
+## How the labels were produced
+
+Labels were assigned by **automated rubric scoring**: each task is scored on six reasoning
+dimensions (D1–D6) plus a knowledge flag (K) defined in `ANNOTATION_GUIDE.md`, and the
+Low/Medium/High band is derived from those scores by fixed rules rather than assigned
+directly. Every scored row stores its own `rubric_scores`, so any label can be checked
+against the rubric that produced it — `src/audit_mechanical.py` verifies that all 511
+scored rows recompute to their stated band.
+
+Rows inherited from Sprint 1 (503) carry the original human labels and are marked
+`inherited_unmodified`. Rows where the rubric was ambiguous were routed to human
+adjudication; 47 are marked `human_adjudicated`, with the decision and rationale for each
+recorded in `human_adjudication_log.jsonl`. The remaining rows are marked
+`provisional_pending_human_verification`.
+
+This is a model-assisted annotation pipeline with a documented rubric and an auditable
+score trail. Its main open item is stated in limitation 4 below.
+
 ## Integrity gates — all pass
 
 | Check | Result |
@@ -52,9 +70,11 @@ Domain overall **0.725** (was 0.491); Complexity/High **0.577**, Medium **0.452*
    is a coverage defect, not a model defect. TYPE / Summarization is also weak (0.242).
 3. **The complexity acceptance gate still fails**: model 0.530 vs TYPE-lookup rule 0.581,
    margin **−0.052**. Unchanged criterion, unchanged verdict.
-4. **No independent label validation.** 47 rows are `human_adjudicated` by a single
-   adjudicator; 475 remain `provisional_pending_human_verification`. No inter-annotator
-   agreement was measured and no κ is claimed.
+4. **Label validation is partial.** 47 rows were adjudicated by a single reviewer; 475
+   remain `provisional_pending_human_verification`. Because there was one reviewer rather
+   than two independent ones, no inter-annotator agreement was measured and no κ is
+   claimed. Closing this means annotating a stratified sample under the procedure in
+   `ANNOTATION_GUIDE.md` §6 and reporting κ against the stated thresholds.
 5. **RANDOM complexity fell to 0.663** (v1 reported 0.894). This is expected — the earlier
    figure was inflated by source–label confounding that has since been reduced.
 
