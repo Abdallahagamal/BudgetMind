@@ -1,0 +1,2393 @@
+{
+  "dimension": "complexity",
+  "taxonomy_version": "1.0",
+  "embedding_model": "all-MiniLM-L6-v2",
+  "n_train": 706,
+  "n_validation": 153,
+  "n_test": 149,
+  "labels": [
+    "High",
+    "Low",
+    "Medium"
+  ],
+  "majority_baseline": {
+    "accuracy": 0.4563758389261745,
+    "macro_f1": 0.20890937019969277
+  },
+  "candidates": {
+    "LogisticRegression": {
+      "random_protocol": {
+        "validation_macro_f1": 0.674666164684175,
+        "test_accuracy": 0.697986577181208,
+        "test_macro_precision": 0.6843392649666727,
+        "test_macro_recall": 0.6819745442036463,
+        "test_macro_f1": 0.6794355282566101,
+        "test_ece": 0.08492864181759385,
+        "inference_ms_for_test_set": 0.12366598821245134,
+        "per_class": [
+          {
+            "label": "High",
+            "precision": 0.6666666666666666,
+            "recall": 0.6666666666666666,
+            "f1": 0.6666666666666666,
+            "support": 24
+          },
+          {
+            "label": "Low",
+            "precision": 0.7341772151898734,
+            "recall": 0.8529411764705882,
+            "f1": 0.7891156462585034,
+            "support": 68
+          },
+          {
+            "label": "Medium",
+            "precision": 0.6521739130434783,
+            "recall": 0.5263157894736842,
+            "f1": 0.5825242718446602,
+            "support": 57
+          }
+        ],
+        "confusion_matrix": [
+          [
+            16,
+            0,
+            8
+          ],
+          [
+            2,
+            58,
+            8
+          ],
+          [
+            6,
+            21,
+            30
+          ]
+        ],
+        "errors": [
+          {
+            "task_id": "T0034",
+            "true": "Low",
+            "predicted": "High",
+            "confidence": 0.48452848458732983,
+            "margin": 0.20915388862841416
+          },
+          {
+            "task_id": "T0077",
+            "true": "Low",
+            "predicted": "Medium",
+            "confidence": 0.5317323331364776,
+            "margin": 0.0934425271729894
+          },
+          {
+            "task_id": "T0190",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.5429212027948109,
+            "margin": 0.19383974646404228
+          },
+          {
+            "task_id": "T0257",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.47862456626568745,
+            "margin": 0.09682065967154346
+          },
+          {
+            "task_id": "T0284",
+            "true": "Medium",
+            "predicted": "High",
+            "confidence": 0.6711874618028915,
+            "margin": 0.4524404189881057
+          },
+          {
+            "task_id": "T0319",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.7301470571889589,
+            "margin": 0.49954841262981686
+          },
+          {
+            "task_id": "T0338",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.4778298679028871,
+            "margin": 0.01328789956265658
+          },
+          {
+            "task_id": "T0530",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.6664184690314978,
+            "margin": 0.4596060771984191
+          },
+          {
+            "task_id": "T0254",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.5551874299543601,
+            "margin": 0.21583287549982388
+          },
+          {
+            "task_id": "T0299",
+            "true": "Medium",
+            "predicted": "High",
+            "confidence": 0.4798700301082512,
+            "margin": 0.07615602446899583
+          },
+          {
+            "task_id": "T0449",
+            "true": "Medium",
+            "predicted": "High",
+            "confidence": 0.9569071697613384,
+            "margin": 0.9246547104065574
+          },
+          {
+            "task_id": "V0016",
+            "true": "Low",
+            "predicted": "Medium",
+            "confidence": 0.704059490895585,
+            "margin": 0.5206784160968294
+          },
+          {
+            "task_id": "V0059",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.5155048222189468,
+            "margin": 0.1395980700008414
+          },
+          {
+            "task_id": "V0064",
+            "true": "Medium",
+            "predicted": "High",
+            "confidence": 0.5368629573712047,
+            "margin": 0.15568147191242626
+          },
+          {
+            "task_id": "V0098",
+            "true": "Low",
+            "predicted": "Medium",
+            "confidence": 0.5399530075716363,
+            "margin": 0.12727295580179532
+          },
+          {
+            "task_id": "V0130",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.40860539938877977,
+            "margin": 0.02633334364445883
+          },
+          {
+            "task_id": "V0145",
+            "true": "High",
+            "predicted": "Medium",
+            "confidence": 0.48715251483524713,
+            "margin": 0.19255418849836647
+          },
+          {
+            "task_id": "V0150",
+            "true": "High",
+            "predicted": "Medium",
+            "confidence": 0.8377450231782497,
+            "margin": 0.7538175604447963
+          },
+          {
+            "task_id": "V0179",
+            "true": "Medium",
+            "predicted": "High",
+            "confidence": 0.4160917554273664,
+            "margin": 0.03673388894450519
+          },
+          {
+            "task_id": "V0190",
+            "true": "Low",
+            "predicted": "Medium",
+            "confidence": 0.6231984798731738,
+            "margin": 0.30800977577415917
+          },
+          {
+            "task_id": "V0195",
+            "true": "Low",
+            "predicted": "Medium",
+            "confidence": 0.4871553122611047,
+            "margin": 0.13532633850842923
+          },
+          {
+            "task_id": "V0233",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.5889968013596565,
+            "margin": 0.25096558458148155
+          },
+          {
+            "task_id": "V0251",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.750566087148623,
+            "margin": 0.5331554404895139
+          },
+          {
+            "task_id": "V0288",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.4178520328193187,
+            "margin": 0.1125884577365146
+          },
+          {
+            "task_id": "V0327",
+            "true": "Low",
+            "predicted": "Medium",
+            "confidence": 0.7988686756621991,
+            "margin": 0.6749858761710779
+          },
+          {
+            "task_id": "V0333",
+            "true": "Medium",
+            "predicted": "High",
+            "confidence": 0.5465455726568417,
+            "margin": 0.19629112983663538
+          },
+          {
+            "task_id": "V0375",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.6522044504673835,
+            "margin": 0.47483480128039235
+          },
+          {
+            "task_id": "V0378",
+            "true": "High",
+            "predicted": "Medium",
+            "confidence": 0.4949582068335136,
+            "margin": 0.17824993866298527
+          },
+          {
+            "task_id": "V0386",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.5612861172412392,
+            "margin": 0.2413030467925531
+          },
+          {
+            "task_id": "V0391",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.5117325610863469,
+            "margin": 0.1842121279218989
+          },
+          {
+            "task_id": "V0400",
+            "true": "High",
+            "predicted": "Medium",
+            "confidence": 0.5073418886596192,
+            "margin": 0.24536333478771238
+          },
+          {
+            "task_id": "V0408",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.7645032332215972,
+            "margin": 0.6297657857754987
+          },
+          {
+            "task_id": "V0416",
+            "true": "High",
+            "predicted": "Medium",
+            "confidence": 0.49475154387405457,
+            "margin": 0.0608618272963502
+          },
+          {
+            "task_id": "V0418",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.7219900793535071,
+            "margin": 0.5283940707771131
+          },
+          {
+            "task_id": "V0438",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.5819061548030632,
+            "margin": 0.21187636266920745
+          },
+          {
+            "task_id": "V0440",
+            "true": "Low",
+            "predicted": "Medium",
+            "confidence": 0.5316276447429475,
+            "margin": 0.19119365592767845
+          },
+          {
+            "task_id": "V0451",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.6105287589575054,
+            "margin": 0.33174947626478035
+          },
+          {
+            "task_id": "V0453",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.5884870527644018,
+            "margin": 0.27031372005078175
+          },
+          {
+            "task_id": "V0456",
+            "true": "High",
+            "predicted": "Medium",
+            "confidence": 0.4608373618640496,
+            "margin": 0.1450520405009807
+          },
+          {
+            "task_id": "V0460",
+            "true": "Low",
+            "predicted": "Medium",
+            "confidence": 0.45097088932683066,
+            "margin": 0.06543259710882299
+          },
+          {
+            "task_id": "V0474",
+            "true": "Low",
+            "predicted": "High",
+            "confidence": 0.39416166243296474,
+            "margin": 0.06871177952989688
+          },
+          {
+            "task_id": "V0485",
+            "true": "High",
+            "predicted": "Medium",
+            "confidence": 0.6463694018969696,
+            "margin": 0.4031548318425664
+          },
+          {
+            "task_id": "V0513",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.7846035769636251,
+            "margin": 0.6117057712393625
+          },
+          {
+            "task_id": "V0520",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.4433999987980055,
+            "margin": 0.11319901218841455
+          },
+          {
+            "task_id": "V0522",
+            "true": "High",
+            "predicted": "Medium",
+            "confidence": 0.5570543647602468,
+            "margin": 0.3291782316991486
+          }
+        ]
+      },
+      "grouped_protocol": {
+        "pooled_accuracy": 0.5183714001986097,
+        "pooled_macro_f1": 0.5296244845625782,
+        "evaluated_labels": [
+          "High",
+          "Low",
+          "Medium"
+        ],
+        "unevaluable_labels": [],
+        "per_class": [
+          {
+            "label": "High",
+            "precision": 0.5866666666666667,
+            "recall": 0.567741935483871,
+            "f1": 0.5770491803278689,
+            "support": 155
+          },
+          {
+            "label": "Low",
+            "precision": 0.5918854415274463,
+            "recall": 0.5310492505353319,
+            "f1": 0.5598194130925508,
+            "support": 467
+          },
+          {
+            "label": "Medium",
+            "precision": 0.4246575342465753,
+            "recall": 0.4831168831168831,
+            "f1": 0.4520048602673147,
+            "support": 385
+          }
+        ],
+        "per_source": [
+          {
+            "source": "BIG-Bench-Hard",
+            "n": 16,
+            "true_labels": [
+              "High",
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.5625,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 5
+              },
+              {
+                "predicted": "High",
+                "count": 2
+              }
+            ]
+          },
+          {
+            "source": "BillSum",
+            "n": 40,
+            "true_labels": [
+              "High",
+              "Medium"
+            ],
+            "accuracy": 0.5,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 9
+              },
+              {
+                "predicted": "High",
+                "count": 6
+              },
+              {
+                "predicted": "Medium",
+                "count": 5
+              }
+            ]
+          },
+          {
+            "source": "DROP",
+            "n": 41,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.5121951219512195,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 18
+              },
+              {
+                "predicted": "Low",
+                "count": 2
+              }
+            ]
+          },
+          {
+            "source": "HLD-Bench",
+            "n": 55,
+            "true_labels": [
+              "High",
+              "Medium"
+            ],
+            "accuracy": 0.8545454545454545,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "High",
+                "count": 5
+              },
+              {
+                "predicted": "Medium",
+                "count": 2
+              },
+              {
+                "predicted": "Low",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "HotpotQA",
+            "n": 50,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.42,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 16
+              },
+              {
+                "predicted": "Medium",
+                "count": 11
+              },
+              {
+                "predicted": "High",
+                "count": 2
+              }
+            ]
+          },
+          {
+            "source": "Hugging Face Creative Writing datasets",
+            "n": 70,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.5142857142857142,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 25
+              },
+              {
+                "predicted": "High",
+                "count": 6
+              },
+              {
+                "predicted": "Low",
+                "count": 3
+              }
+            ]
+          },
+          {
+            "source": "MATH",
+            "n": 83,
+            "true_labels": [
+              "High",
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.42168674698795183,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 27
+              },
+              {
+                "predicted": "Medium",
+                "count": 20
+              },
+              {
+                "predicted": "High",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "Natural Questions (NQ)",
+            "n": 35,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.8,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 6
+              },
+              {
+                "predicted": "High",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "OASST1",
+            "n": 117,
+            "true_labels": [
+              "High",
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.4188034188034188,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 41
+              },
+              {
+                "predicted": "Medium",
+                "count": 21
+              },
+              {
+                "predicted": "High",
+                "count": 6
+              }
+            ]
+          },
+          {
+            "source": "SVAMP",
+            "n": 35,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.08571428571428572,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 31
+              },
+              {
+                "predicted": "High",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "SWE-bench",
+            "n": 38,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.6578947368421053,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 9
+              },
+              {
+                "predicted": "High",
+                "count": 2
+              },
+              {
+                "predicted": "Medium",
+                "count": 2
+              }
+            ]
+          },
+          {
+            "source": "StackExchange",
+            "n": 104,
+            "true_labels": [
+              "High",
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.5673076923076923,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 32
+              },
+              {
+                "predicted": "High",
+                "count": 12
+              },
+              {
+                "predicted": "Low",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "StrategyQA",
+            "n": 35,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.2571428571428571,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 22
+              },
+              {
+                "predicted": "High",
+                "count": 4
+              }
+            ]
+          },
+          {
+            "source": "TruthfulQA",
+            "n": 100,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.51,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 46
+              },
+              {
+                "predicted": "High",
+                "count": 3
+              }
+            ]
+          },
+          {
+            "source": "WMT translation",
+            "n": 49,
+            "true_labels": [
+              "Low"
+            ],
+            "accuracy": 0.4897959183673469,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 21
+              },
+              {
+                "predicted": "High",
+                "count": 4
+              }
+            ]
+          },
+          {
+            "source": "Xsum",
+            "n": 11,
+            "true_labels": [
+              "Medium"
+            ],
+            "accuracy": 0.5454545454545454,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 5
+              }
+            ]
+          },
+          {
+            "source": "cnn_dailymail",
+            "n": 18,
+            "true_labels": [
+              "Medium"
+            ],
+            "accuracy": 0.8333333333333334,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 3
+              }
+            ]
+          },
+          {
+            "source": "devpkprajapati/ai-system-design-instruct",
+            "n": 23,
+            "true_labels": [
+              "High"
+            ],
+            "accuracy": 1.0,
+            "label_covered_by_train": true,
+            "top_confusions": []
+          },
+          {
+            "source": "google-research-datasets (MBPP)",
+            "n": 20,
+            "true_labels": [
+              "Low"
+            ],
+            "accuracy": 1.0,
+            "label_covered_by_train": true,
+            "top_confusions": []
+          },
+          {
+            "source": "mmlu",
+            "n": 28,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.5357142857142857,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 7
+              },
+              {
+                "predicted": "High",
+                "count": 5
+              },
+              {
+                "predicted": "Low",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "openai/gsm8k",
+            "n": 39,
+            "true_labels": [
+              "Medium"
+            ],
+            "accuracy": 0.15384615384615385,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 31
+              },
+              {
+                "predicted": "High",
+                "count": 2
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "RandomForest": {
+      "random_protocol": {
+        "validation_macro_f1": 0.6344155844155844,
+        "test_accuracy": 0.697986577181208,
+        "test_macro_precision": 0.7526839256984057,
+        "test_macro_recall": 0.6237960096319229,
+        "test_macro_f1": 0.648332060096766,
+        "test_ece": 0.16463087248322147,
+        "inference_ms_for_test_set": 14.184625004418194,
+        "per_class": [
+          {
+            "label": "High",
+            "precision": 0.9,
+            "recall": 0.375,
+            "f1": 0.5294117647058824,
+            "support": 24
+          },
+          {
+            "label": "Low",
+            "precision": 0.6976744186046512,
+            "recall": 0.8823529411764706,
+            "f1": 0.7792207792207793,
+            "support": 68
+          },
+          {
+            "label": "Medium",
+            "precision": 0.660377358490566,
+            "recall": 0.6140350877192983,
+            "f1": 0.6363636363636364,
+            "support": 57
+          }
+        ],
+        "confusion_matrix": [
+          [
+            9,
+            5,
+            10
+          ],
+          [
+            0,
+            60,
+            8
+          ],
+          [
+            1,
+            21,
+            35
+          ]
+        ],
+        "errors": [
+          {
+            "task_id": "T0240",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.4866666666666667,
+            "margin": 0.10000000000000003
+          },
+          {
+            "task_id": "T0275",
+            "true": "Low",
+            "predicted": "Medium",
+            "confidence": 0.47,
+            "margin": 0.036666666666666625
+          },
+          {
+            "task_id": "T0319",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.48,
+            "margin": 0.03999999999999998
+          },
+          {
+            "task_id": "T0419",
+            "true": "High",
+            "predicted": "Low",
+            "confidence": 0.4033333333333333,
+            "margin": 0.0733333333333333
+          },
+          {
+            "task_id": "T0464",
+            "true": "High",
+            "predicted": "Low",
+            "confidence": 0.36,
+            "margin": 0.006666666666666654
+          },
+          {
+            "task_id": "T0530",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.7066666666666667,
+            "margin": 0.4966666666666667
+          },
+          {
+            "task_id": "T0254",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.4633333333333333,
+            "margin": 0.07999999999999996
+          },
+          {
+            "task_id": "T0347",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.47333333333333333,
+            "margin": 0.016666666666666663
+          },
+          {
+            "task_id": "T0429",
+            "true": "High",
+            "predicted": "Low",
+            "confidence": 0.3566666666666667,
+            "margin": 0.010000000000000009
+          },
+          {
+            "task_id": "T0449",
+            "true": "Medium",
+            "predicted": "High",
+            "confidence": 0.55,
+            "margin": 0.2833333333333334
+          },
+          {
+            "task_id": "V0016",
+            "true": "Low",
+            "predicted": "Medium",
+            "confidence": 0.5833333333333334,
+            "margin": 0.2366666666666667
+          },
+          {
+            "task_id": "V0058",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.51,
+            "margin": 0.14
+          },
+          {
+            "task_id": "V0064",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.49666666666666665,
+            "margin": 0.12
+          },
+          {
+            "task_id": "V0095",
+            "true": "Low",
+            "predicted": "Medium",
+            "confidence": 0.4533333333333333,
+            "margin": 0.0033333333333332993
+          },
+          {
+            "task_id": "V0130",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.49,
+            "margin": 0.1333333333333333
+          },
+          {
+            "task_id": "V0145",
+            "true": "High",
+            "predicted": "Medium",
+            "confidence": 0.49666666666666665,
+            "margin": 0.12
+          },
+          {
+            "task_id": "V0150",
+            "true": "High",
+            "predicted": "Medium",
+            "confidence": 0.6266666666666667,
+            "margin": 0.37333333333333335
+          },
+          {
+            "task_id": "V0190",
+            "true": "Low",
+            "predicted": "Medium",
+            "confidence": 0.49333333333333335,
+            "margin": 0.08000000000000002
+          },
+          {
+            "task_id": "V0224",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.5333333333333333,
+            "margin": 0.1333333333333333
+          },
+          {
+            "task_id": "V0229",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.5133333333333333,
+            "margin": 0.09666666666666662
+          },
+          {
+            "task_id": "V0233",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.48333333333333334,
+            "margin": 0.06
+          },
+          {
+            "task_id": "V0251",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.58,
+            "margin": 0.22666666666666663
+          },
+          {
+            "task_id": "V0285",
+            "true": "High",
+            "predicted": "Medium",
+            "confidence": 0.44333333333333336,
+            "margin": 0.11000000000000004
+          },
+          {
+            "task_id": "V0306",
+            "true": "High",
+            "predicted": "Medium",
+            "confidence": 0.41333333333333333,
+            "margin": 0.026666666666666672
+          },
+          {
+            "task_id": "V0325",
+            "true": "High",
+            "predicted": "Medium",
+            "confidence": 0.41,
+            "margin": 0.10333333333333333
+          },
+          {
+            "task_id": "V0327",
+            "true": "Low",
+            "predicted": "Medium",
+            "confidence": 0.4866666666666667,
+            "margin": 0.13
+          },
+          {
+            "task_id": "V0375",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.6166666666666667,
+            "margin": 0.33666666666666667
+          },
+          {
+            "task_id": "V0378",
+            "true": "High",
+            "predicted": "Low",
+            "confidence": 0.44666666666666666,
+            "margin": 0.03999999999999998
+          },
+          {
+            "task_id": "V0391",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.5033333333333333,
+            "margin": 0.15666666666666662
+          },
+          {
+            "task_id": "V0400",
+            "true": "High",
+            "predicted": "Medium",
+            "confidence": 0.4533333333333333,
+            "margin": 0.08999999999999997
+          },
+          {
+            "task_id": "V0408",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.6333333333333333,
+            "margin": 0.36666666666666664
+          },
+          {
+            "task_id": "V0416",
+            "true": "High",
+            "predicted": "Medium",
+            "confidence": 0.5166666666666667,
+            "margin": 0.22000000000000003
+          },
+          {
+            "task_id": "V0418",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.5766666666666667,
+            "margin": 0.3333333333333333
+          },
+          {
+            "task_id": "V0426",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.43666666666666665,
+            "margin": 0.043333333333333335
+          },
+          {
+            "task_id": "V0440",
+            "true": "Low",
+            "predicted": "Medium",
+            "confidence": 0.57,
+            "margin": 0.19999999999999996
+          },
+          {
+            "task_id": "V0453",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.58,
+            "margin": 0.21666666666666662
+          },
+          {
+            "task_id": "V0456",
+            "true": "High",
+            "predicted": "Medium",
+            "confidence": 0.4866666666666667,
+            "margin": 0.11333333333333334
+          },
+          {
+            "task_id": "V0474",
+            "true": "Low",
+            "predicted": "Medium",
+            "confidence": 0.45666666666666667,
+            "margin": 0.10333333333333333
+          },
+          {
+            "task_id": "V0482",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.49666666666666665,
+            "margin": 0.13
+          },
+          {
+            "task_id": "V0485",
+            "true": "High",
+            "predicted": "Low",
+            "confidence": 0.44,
+            "margin": 0.003333333333333355
+          },
+          {
+            "task_id": "V0495",
+            "true": "High",
+            "predicted": "Medium",
+            "confidence": 0.44666666666666666,
+            "margin": 0.08000000000000002
+          },
+          {
+            "task_id": "V0500",
+            "true": "Low",
+            "predicted": "Medium",
+            "confidence": 0.44333333333333336,
+            "margin": 0.026666666666666672
+          },
+          {
+            "task_id": "V0513",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.7166666666666667,
+            "margin": 0.48333333333333334
+          },
+          {
+            "task_id": "V0520",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.45666666666666667,
+            "margin": 0.010000000000000009
+          },
+          {
+            "task_id": "V0522",
+            "true": "High",
+            "predicted": "Medium",
+            "confidence": 0.4,
+            "margin": 0.016666666666666663
+          }
+        ]
+      },
+      "grouped_protocol": {
+        "pooled_accuracy": 0.48758689175769615,
+        "pooled_macro_f1": 0.35432487058100226,
+        "evaluated_labels": [
+          "High",
+          "Low",
+          "Medium"
+        ],
+        "unevaluable_labels": [],
+        "per_class": [
+          {
+            "label": "High",
+            "precision": 1.0,
+            "recall": 0.012903225806451613,
+            "f1": 0.025477707006369428,
+            "support": 155
+          },
+          {
+            "label": "Low",
+            "precision": 0.5241379310344828,
+            "recall": 0.6509635974304069,
+            "f1": 0.5807067812798472,
+            "support": 467
+          },
+          {
+            "label": "Medium",
+            "precision": 0.43529411764705883,
+            "recall": 0.4805194805194805,
+            "f1": 0.4567901234567901,
+            "support": 385
+          }
+        ],
+        "per_source": [
+          {
+            "source": "BIG-Bench-Hard",
+            "n": 16,
+            "true_labels": [
+              "High",
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.6875,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 5
+              }
+            ]
+          },
+          {
+            "source": "BillSum",
+            "n": 40,
+            "true_labels": [
+              "High",
+              "Medium"
+            ],
+            "accuracy": 0.725,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 6
+              },
+              {
+                "predicted": "Medium",
+                "count": 5
+              }
+            ]
+          },
+          {
+            "source": "DROP",
+            "n": 41,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.5853658536585366,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 17
+              }
+            ]
+          },
+          {
+            "source": "HLD-Bench",
+            "n": 55,
+            "true_labels": [
+              "High",
+              "Medium"
+            ],
+            "accuracy": 0.09090909090909091,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 47
+              },
+              {
+                "predicted": "Medium",
+                "count": 3
+              }
+            ]
+          },
+          {
+            "source": "HotpotQA",
+            "n": 50,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.46,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 26
+              },
+              {
+                "predicted": "Medium",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "Hugging Face Creative Writing datasets",
+            "n": 70,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.8285714285714286,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 8
+              },
+              {
+                "predicted": "Low",
+                "count": 4
+              }
+            ]
+          },
+          {
+            "source": "MATH",
+            "n": 83,
+            "true_labels": [
+              "High",
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.43373493975903615,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 29
+              },
+              {
+                "predicted": "Medium",
+                "count": 18
+              }
+            ]
+          },
+          {
+            "source": "Natural Questions (NQ)",
+            "n": 35,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.9714285714285714,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "OASST1",
+            "n": 117,
+            "true_labels": [
+              "High",
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.2905982905982906,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 74
+              },
+              {
+                "predicted": "Medium",
+                "count": 9
+              }
+            ]
+          },
+          {
+            "source": "SVAMP",
+            "n": 35,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.08571428571428572,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 31
+              },
+              {
+                "predicted": "Low",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "SWE-bench",
+            "n": 38,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.631578947368421,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 8
+              },
+              {
+                "predicted": "Medium",
+                "count": 6
+              }
+            ]
+          },
+          {
+            "source": "StackExchange",
+            "n": 104,
+            "true_labels": [
+              "High",
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.5096153846153846,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 46
+              },
+              {
+                "predicted": "Low",
+                "count": 5
+              }
+            ]
+          },
+          {
+            "source": "StrategyQA",
+            "n": 35,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.11428571428571428,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 31
+              }
+            ]
+          },
+          {
+            "source": "TruthfulQA",
+            "n": 100,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.57,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 43
+              }
+            ]
+          },
+          {
+            "source": "WMT translation",
+            "n": 49,
+            "true_labels": [
+              "Low"
+            ],
+            "accuracy": 0.5714285714285714,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 21
+              }
+            ]
+          },
+          {
+            "source": "Xsum",
+            "n": 11,
+            "true_labels": [
+              "Medium"
+            ],
+            "accuracy": 0.9090909090909091,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "cnn_dailymail",
+            "n": 18,
+            "true_labels": [
+              "Medium"
+            ],
+            "accuracy": 0.8888888888888888,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 2
+              }
+            ]
+          },
+          {
+            "source": "devpkprajapati/ai-system-design-instruct",
+            "n": 23,
+            "true_labels": [
+              "High"
+            ],
+            "accuracy": 0.08695652173913043,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 20
+              },
+              {
+                "predicted": "Low",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "google-research-datasets (MBPP)",
+            "n": 20,
+            "true_labels": [
+              "Low"
+            ],
+            "accuracy": 1.0,
+            "label_covered_by_train": true,
+            "top_confusions": []
+          },
+          {
+            "source": "mmlu",
+            "n": 28,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.6785714285714286,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 7
+              },
+              {
+                "predicted": "Low",
+                "count": 2
+              }
+            ]
+          },
+          {
+            "source": "openai/gsm8k",
+            "n": 39,
+            "true_labels": [
+              "Medium"
+            ],
+            "accuracy": 0.02564102564102564,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 38
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "SVM": {
+      "random_protocol": {
+        "validation_macro_f1": 0.7030227649630635,
+        "test_accuracy": 0.7248322147651006,
+        "test_macro_precision": 0.7398108578664134,
+        "test_macro_recall": 0.6784055727554179,
+        "test_macro_f1": 0.6975483857726331,
+        "test_ece": 0.04764728689899276,
+        "inference_ms_for_test_set": 12.08866701927036,
+        "per_class": [
+          {
+            "label": "High",
+            "precision": 0.8125,
+            "recall": 0.5416666666666666,
+            "f1": 0.65,
+            "support": 24
+          },
+          {
+            "label": "Low",
+            "precision": 0.7530864197530864,
+            "recall": 0.8970588235294118,
+            "f1": 0.8187919463087249,
+            "support": 68
+          },
+          {
+            "label": "Medium",
+            "precision": 0.6538461538461539,
+            "recall": 0.5964912280701754,
+            "f1": 0.6238532110091743,
+            "support": 57
+          }
+        ],
+        "confusion_matrix": [
+          [
+            13,
+            0,
+            11
+          ],
+          [
+            0,
+            61,
+            7
+          ],
+          [
+            3,
+            20,
+            34
+          ]
+        ],
+        "errors": [
+          {
+            "task_id": "T0034",
+            "true": "Low",
+            "predicted": "Medium",
+            "confidence": 0.502509524973962,
+            "margin": 0.1690160495178582
+          },
+          {
+            "task_id": "T0284",
+            "true": "Medium",
+            "predicted": "High",
+            "confidence": 0.5574224373330847,
+            "margin": 0.15864126029798492
+          },
+          {
+            "task_id": "T0319",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.8075618899272996,
+            "margin": 0.6199190774038856
+          },
+          {
+            "task_id": "T0530",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.7786178288872793,
+            "margin": 0.605794324317606
+          },
+          {
+            "task_id": "T0254",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.6024737101222412,
+            "margin": 0.24094053366338986
+          },
+          {
+            "task_id": "T0347",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.5411158319172634,
+            "margin": 0.12175893270355265
+          },
+          {
+            "task_id": "T0449",
+            "true": "Medium",
+            "predicted": "High",
+            "confidence": 0.975771152981275,
+            "margin": 0.9531177364184666
+          },
+          {
+            "task_id": "V0016",
+            "true": "Low",
+            "predicted": "Medium",
+            "confidence": 0.7112221933918467,
+            "margin": 0.4536783864189147
+          },
+          {
+            "task_id": "V0059",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.5529565780042625,
+            "margin": 0.13354815492400085
+          },
+          {
+            "task_id": "V0115",
+            "true": "Low",
+            "predicted": "Medium",
+            "confidence": 0.5053526776967757,
+            "margin": 0.030920900252113692
+          },
+          {
+            "task_id": "V0130",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.41115154855454905,
+            "margin": 0.07263610917253072
+          },
+          {
+            "task_id": "V0145",
+            "true": "High",
+            "predicted": "Medium",
+            "confidence": 0.5769366994987457,
+            "margin": 0.2625385791500781
+          },
+          {
+            "task_id": "V0150",
+            "true": "High",
+            "predicted": "Medium",
+            "confidence": 0.9166136888534049,
+            "margin": 0.8694412228420827
+          },
+          {
+            "task_id": "V0190",
+            "true": "Low",
+            "predicted": "Medium",
+            "confidence": 0.6025781871611102,
+            "margin": 0.22238354767374074
+          },
+          {
+            "task_id": "V0233",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.6074411284690466,
+            "margin": 0.23454232017229626
+          },
+          {
+            "task_id": "V0251",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.8448016294369669,
+            "margin": 0.6945611422005487
+          },
+          {
+            "task_id": "V0285",
+            "true": "High",
+            "predicted": "Medium",
+            "confidence": 0.5115268209196763,
+            "margin": 0.09785867952310173
+          },
+          {
+            "task_id": "V0288",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.47774301652585305,
+            "margin": 0.17121422540660491
+          },
+          {
+            "task_id": "V0306",
+            "true": "High",
+            "predicted": "Medium",
+            "confidence": 0.530972284929562,
+            "margin": 0.22355020421234745
+          },
+          {
+            "task_id": "V0327",
+            "true": "Low",
+            "predicted": "Medium",
+            "confidence": 0.8793868078923458,
+            "margin": 0.8084755692980012
+          },
+          {
+            "task_id": "V0333",
+            "true": "Medium",
+            "predicted": "High",
+            "confidence": 0.6972179485141734,
+            "margin": 0.4189472155822993
+          },
+          {
+            "task_id": "V0375",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.741359321756026,
+            "margin": 0.5593837023028807
+          },
+          {
+            "task_id": "V0378",
+            "true": "High",
+            "predicted": "Medium",
+            "confidence": 0.6568007527168147,
+            "margin": 0.4191028930216287
+          },
+          {
+            "task_id": "V0386",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.6507413822207252,
+            "margin": 0.33589194212033047
+          },
+          {
+            "task_id": "V0391",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.6625542442347291,
+            "margin": 0.38105334523377415
+          },
+          {
+            "task_id": "V0400",
+            "true": "High",
+            "predicted": "Medium",
+            "confidence": 0.7149674066497103,
+            "margin": 0.5593636599392462
+          },
+          {
+            "task_id": "V0408",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.8364998126514052,
+            "margin": 0.7047715417899962
+          },
+          {
+            "task_id": "V0416",
+            "true": "High",
+            "predicted": "Medium",
+            "confidence": 0.7332670526170272,
+            "margin": 0.5150913371937066
+          },
+          {
+            "task_id": "V0418",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.837868902512588,
+            "margin": 0.7510638420426826
+          },
+          {
+            "task_id": "V0438",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.7778578187123492,
+            "margin": 0.5624397995732282
+          },
+          {
+            "task_id": "V0439",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.904113625193734,
+            "margin": 0.8168964666075993
+          },
+          {
+            "task_id": "V0440",
+            "true": "Low",
+            "predicted": "Medium",
+            "confidence": 0.518215129772003,
+            "margin": 0.06594161067332749
+          },
+          {
+            "task_id": "V0451",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.7508374126185113,
+            "margin": 0.5221588541400921
+          },
+          {
+            "task_id": "V0453",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.7929897149426031,
+            "margin": 0.600125002797071
+          },
+          {
+            "task_id": "V0456",
+            "true": "High",
+            "predicted": "Medium",
+            "confidence": 0.5183603851790687,
+            "margin": 0.1854465198400822
+          },
+          {
+            "task_id": "V0474",
+            "true": "Low",
+            "predicted": "Medium",
+            "confidence": 0.4928780615776392,
+            "margin": 0.16518924801157403
+          },
+          {
+            "task_id": "V0485",
+            "true": "High",
+            "predicted": "Medium",
+            "confidence": 0.6443652949507798,
+            "margin": 0.3422634927322309
+          },
+          {
+            "task_id": "V0495",
+            "true": "High",
+            "predicted": "Medium",
+            "confidence": 0.5353216812426647,
+            "margin": 0.23765895943343457
+          },
+          {
+            "task_id": "V0513",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.7631647970454201,
+            "margin": 0.5378352995717428
+          },
+          {
+            "task_id": "V0520",
+            "true": "Medium",
+            "predicted": "Low",
+            "confidence": 0.5058329397228142,
+            "margin": 0.16282872199156667
+          },
+          {
+            "task_id": "V0522",
+            "true": "High",
+            "predicted": "Medium",
+            "confidence": 0.6844681184438539,
+            "margin": 0.5013191139742371
+          }
+        ]
+      },
+      "grouped_protocol": {
+        "pooled_accuracy": 0.5163853028798411,
+        "pooled_macro_f1": 0.5274369434491343,
+        "evaluated_labels": [
+          "High",
+          "Low",
+          "Medium"
+        ],
+        "unevaluable_labels": [],
+        "per_class": [
+          {
+            "label": "High",
+            "precision": 0.8767123287671232,
+            "recall": 0.4129032258064516,
+            "f1": 0.5614035087719298,
+            "support": 155
+          },
+          {
+            "label": "Low",
+            "precision": 0.5661252900232019,
+            "recall": 0.5224839400428265,
+            "f1": 0.5434298440979956,
+            "support": 467
+          },
+          {
+            "label": "Medium",
+            "precision": 0.42147117296222664,
+            "recall": 0.5506493506493506,
+            "f1": 0.4774774774774775,
+            "support": 385
+          }
+        ],
+        "per_source": [
+          {
+            "source": "BIG-Bench-Hard",
+            "n": 16,
+            "true_labels": [
+              "High",
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.8125,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 3
+              }
+            ]
+          },
+          {
+            "source": "BillSum",
+            "n": 40,
+            "true_labels": [
+              "High",
+              "Medium"
+            ],
+            "accuracy": 0.525,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 13
+              },
+              {
+                "predicted": "Medium",
+                "count": 4
+              },
+              {
+                "predicted": "High",
+                "count": 2
+              }
+            ]
+          },
+          {
+            "source": "DROP",
+            "n": 41,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.5365853658536586,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 16
+              },
+              {
+                "predicted": "Low",
+                "count": 3
+              }
+            ]
+          },
+          {
+            "source": "HLD-Bench",
+            "n": 55,
+            "true_labels": [
+              "High",
+              "Medium"
+            ],
+            "accuracy": 0.6909090909090909,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 13
+              },
+              {
+                "predicted": "High",
+                "count": 2
+              },
+              {
+                "predicted": "Low",
+                "count": 2
+              }
+            ]
+          },
+          {
+            "source": "HotpotQA",
+            "n": 50,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.4,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 20
+              },
+              {
+                "predicted": "Medium",
+                "count": 10
+              }
+            ]
+          },
+          {
+            "source": "Hugging Face Creative Writing datasets",
+            "n": 70,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.24285714285714285,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 50
+              },
+              {
+                "predicted": "High",
+                "count": 2
+              },
+              {
+                "predicted": "Low",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "MATH",
+            "n": 83,
+            "true_labels": [
+              "High",
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.4457831325301205,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 28
+              },
+              {
+                "predicted": "Medium",
+                "count": 18
+              }
+            ]
+          },
+          {
+            "source": "Natural Questions (NQ)",
+            "n": 35,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.8857142857142857,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 4
+              }
+            ]
+          },
+          {
+            "source": "OASST1",
+            "n": 117,
+            "true_labels": [
+              "High",
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.4444444444444444,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 45
+              },
+              {
+                "predicted": "Medium",
+                "count": 20
+              }
+            ]
+          },
+          {
+            "source": "SVAMP",
+            "n": 35,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.11428571428571428,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 30
+              },
+              {
+                "predicted": "Low",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "SWE-bench",
+            "n": 38,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.6578947368421053,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 8
+              },
+              {
+                "predicted": "Medium",
+                "count": 5
+              }
+            ]
+          },
+          {
+            "source": "StackExchange",
+            "n": 104,
+            "true_labels": [
+              "High",
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.5865384615384616,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 40
+              },
+              {
+                "predicted": "Low",
+                "count": 2
+              },
+              {
+                "predicted": "High",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "StrategyQA",
+            "n": 35,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.37142857142857144,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 22
+              }
+            ]
+          },
+          {
+            "source": "TruthfulQA",
+            "n": 100,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.53,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 47
+              }
+            ]
+          },
+          {
+            "source": "WMT translation",
+            "n": 49,
+            "true_labels": [
+              "Low"
+            ],
+            "accuracy": 0.4897959183673469,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 25
+              }
+            ]
+          },
+          {
+            "source": "Xsum",
+            "n": 11,
+            "true_labels": [
+              "Medium"
+            ],
+            "accuracy": 0.45454545454545453,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 6
+              }
+            ]
+          },
+          {
+            "source": "cnn_dailymail",
+            "n": 18,
+            "true_labels": [
+              "Medium"
+            ],
+            "accuracy": 0.8888888888888888,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 2
+              }
+            ]
+          },
+          {
+            "source": "devpkprajapati/ai-system-design-instruct",
+            "n": 23,
+            "true_labels": [
+              "High"
+            ],
+            "accuracy": 1.0,
+            "label_covered_by_train": true,
+            "top_confusions": []
+          },
+          {
+            "source": "google-research-datasets (MBPP)",
+            "n": 20,
+            "true_labels": [
+              "Low"
+            ],
+            "accuracy": 1.0,
+            "label_covered_by_train": true,
+            "top_confusions": []
+          },
+          {
+            "source": "mmlu",
+            "n": 28,
+            "true_labels": [
+              "Low",
+              "Medium"
+            ],
+            "accuracy": 0.7142857142857143,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Medium",
+                "count": 6
+              },
+              {
+                "predicted": "High",
+                "count": 1
+              },
+              {
+                "predicted": "Low",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "source": "openai/gsm8k",
+            "n": 39,
+            "true_labels": [
+              "Medium"
+            ],
+            "accuracy": 0.1282051282051282,
+            "label_covered_by_train": true,
+            "top_confusions": [
+              {
+                "predicted": "Low",
+                "count": 33
+              },
+              {
+                "predicted": "High",
+                "count": 1
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
