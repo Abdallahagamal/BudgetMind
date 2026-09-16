@@ -1,0 +1,3 @@
+{"permanently_rejected": [
+  {"source":"StackExchange","source_id":"serverfault:87491","reason":"body contains hidden Unicode TAG-block characters (U+E0000 range); re-surfaced during v3 selection because the selector had no persistent rejection memory","first_rejected":"v2.0","re_rejected":"v3"}
+]}

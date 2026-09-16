@@ -1,0 +1,139 @@
+{
+  "dataset": "complexity_dataset_v3_3.jsonl",
+  "rows": 1008,
+  "sources": {
+    "OASST1": {
+      "rows": 117,
+      "license": "Apache-2.0",
+      "license_status": "recorded"
+    },
+    "StackExchange": {
+      "rows": 104,
+      "license": "CC BY-SA 4.0",
+      "license_status": "recorded"
+    },
+    "TruthfulQA": {
+      "rows": 100,
+      "license": null,
+      "license_status": "NOT RECORDED \u2014 inherited from Sprint 1; must be established before public redistribution"
+    },
+    "MATH": {
+      "rows": 83,
+      "license": "MIT",
+      "license_status": "recorded"
+    },
+    "Hugging Face Creative Writing datasets": {
+      "rows": 70,
+      "license": null,
+      "license_status": "NOT RECORDED \u2014 inherited from Sprint 1; must be established before public redistribution"
+    },
+    "HLD-Bench": {
+      "rows": 55,
+      "license": null,
+      "license_status": "NOT RECORDED \u2014 inherited from Sprint 1; must be established before public redistribution"
+    },
+    "HotpotQA": {
+      "rows": 50,
+      "license": "CC BY-SA 4.0",
+      "license_status": "recorded"
+    },
+    "WMT translation": {
+      "rows": 49,
+      "license": null,
+      "license_status": "NOT RECORDED \u2014 inherited from Sprint 1; must be established before public redistribution"
+    },
+    "DROP": {
+      "rows": 41,
+      "license": "CC BY-SA 4.0",
+      "license_status": "recorded"
+    },
+    "BillSum": {
+      "rows": 40,
+      "license": "CC0-1.0",
+      "license_status": "recorded"
+    },
+    "openai/gsm8k": {
+      "rows": 39,
+      "license": null,
+      "license_status": "NOT RECORDED \u2014 inherited from Sprint 1; must be established before public redistribution"
+    },
+    "SWE-bench": {
+      "rows": 38,
+      "license": null,
+      "license_status": "NOT RECORDED \u2014 inherited from Sprint 1; must be established before public redistribution"
+    },
+    "Natural Questions (NQ)": {
+      "rows": 35,
+      "license": null,
+      "license_status": "NOT RECORDED \u2014 inherited from Sprint 1; must be established before public redistribution"
+    },
+    "SVAMP": {
+      "rows": 35,
+      "license": "MIT",
+      "license_status": "recorded"
+    },
+    "StrategyQA": {
+      "rows": 35,
+      "license": "MIT (AI2, verified 2026-09-16)",
+      "license_status": "recorded"
+    },
+    "mmlu": {
+      "rows": 28,
+      "license": null,
+      "license_status": "NOT RECORDED \u2014 inherited from Sprint 1; must be established before public redistribution"
+    },
+    "devpkprajapati/ai-system-design-instruct": {
+      "rows": 23,
+      "license": null,
+      "license_status": "NOT RECORDED \u2014 inherited from Sprint 1; must be established before public redistribution"
+    },
+    "google-research-datasets (MBPP)": {
+      "rows": 20,
+      "license": null,
+      "license_status": "NOT RECORDED \u2014 inherited from Sprint 1; must be established before public redistribution"
+    },
+    "cnn_dailymail": {
+      "rows": 18,
+      "license": null,
+      "license_status": "NOT RECORDED \u2014 inherited from Sprint 1; must be established before public redistribution",
+      "note": "row text embeds verbatim third-party news article content; redistribution of the article text is a separate question from the dataset licence"
+    },
+    "BIG-Bench-Hard": {
+      "rows": 16,
+      "license": null,
+      "license_status": "NOT RECORDED \u2014 inherited from Sprint 1; must be established before public redistribution"
+    },
+    "Xsum": {
+      "rows": 11,
+      "license": null,
+      "license_status": "NOT RECORDED \u2014 inherited from Sprint 1; must be established before public redistribution",
+      "note": "row text embeds verbatim third-party news article content; redistribution of the article text is a separate question from the dataset licence"
+    },
+    "Original": {
+      "rows": 1,
+      "license": null,
+      "license_status": "NOT RECORDED \u2014 inherited from Sprint 1; must be established before public redistribution"
+    }
+  },
+  "taxonomy_version": "2.0",
+  "guidelines_version": "2.8 (see guideline_amendments.jsonl, A1-A8 all approved)",
+  "removed_sources": {
+    "opus_books": {
+      "rows_removed": 30,
+      "removed_in": "v3.3",
+      "hf_id": "Helsinki-NLP/opus_books",
+      "reason": "licensed \"other\": free for personal, educational and research use; commercial use and mass redistribution NOT granted. Removed so the corpus carries no research-only source.",
+      "status": "NOT part of the final dataset. Retained here as historical provenance only.",
+      "effect": "TYPE/Translation returns to 49 of 50 rows from WMT; its grouped F1 falls from 0.899 to 0.037."
+    }
+  },
+  "redistribution_status": {
+    "verdict": "NOT YET CLEAR FOR PUBLIC REDISTRIBUTION",
+    "resolved": "opus_books (the research-only source) has been removed.",
+    "outstanding": [
+      "14 of 22 sources have no licence on record, covering 503 rows (all inherited from Sprint 1).",
+      "cnn_dailymail (18 rows) and Xsum (11 rows) embed verbatim news article text whose copyright sits with the publishers.",
+      "CC BY-SA sources (StackExchange, DROP, HotpotQA) impose ShareAlike: any public redistribution of this corpus must be under a compatible licence and carry ATTRIBUTION.md."
+    ]
+  }
+}
