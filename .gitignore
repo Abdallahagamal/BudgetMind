@@ -1,0 +1,29 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# ---- OS / editor ----
+.DS_Store
+**/.DS_Store
+Thumbs.db
+*.swp
+
+# ---- accidental archive artefacts ----
+*.cpgz
+*.zip.part
+
+# ---- generated embeddings (large, regenerate with src/make_embeddings.py) ----
+Sprint3/dataset_v3/embeddings_v3_3/
+*.npy
+
+# ---- generated audit side-output ----
+mech_flags.json
+
+# ---- local scratch / logs ----
+*.log
+scratch/
+tmp/
+build/
