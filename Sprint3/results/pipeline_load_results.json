@@ -1,0 +1,74 @@
+{
+  "scenarios": [
+    {
+      "code": "LOAD-1",
+      "name": "Single Large Burst (1,000 tasks)",
+      "status": "PASS",
+      "elapsed_ms": 2331.0143999988213,
+      "metrics": {
+        "n_tasks": 1000,
+        "processed": 1000,
+        "cycles": 20,
+        "pending_after": 0
+      }
+    },
+    {
+      "code": "LOAD-2",
+      "name": "Sustained Multi-Cycle Load (20 x 50 tasks)",
+      "status": "PASS",
+      "elapsed_ms": 1048.7688000430353,
+      "metrics": {
+        "n_cycles": 20,
+        "per_cycle": 50,
+        "total_published": 1000,
+        "total_persisted": 1000,
+        "max_observed_backlog": 0,
+        "pending_after": 0
+      }
+    },
+    {
+      "code": "LOAD-3",
+      "name": "Concurrent Publishers, Single Worker (8 x 100 tasks)",
+      "status": "PASS",
+      "elapsed_ms": 870.9361999644898,
+      "metrics": {
+        "n_publishers": 8,
+        "per_publisher": 100,
+        "total_tasks": 800,
+        "processed": 800,
+        "unique_task_ids": 800,
+        "cycles": 25,
+        "pending_after": 0
+      }
+    },
+    {
+      "code": "LOAD-4",
+      "name": "Small-Batch Backpressure Stress (batch_size=3, 500 tasks)",
+      "status": "PASS",
+      "elapsed_ms": 546.347199997399,
+      "metrics": {
+        "n_tasks": 500,
+        "batch_size": 3,
+        "processed": 500,
+        "cycles": 167,
+        "expected_min_cycles": 167,
+        "pending_after": 0
+      }
+    },
+    {
+      "code": "LOAD-5",
+      "name": "Mixed Valid/Invalid Traffic Under Volume (600 tasks, 10% invalid)",
+      "status": "PASS",
+      "elapsed_ms": 587.2109000338241,
+      "metrics": {
+        "n_tasks": 600,
+        "n_valid": 540,
+        "n_invalid": 60,
+        "processed_valid": 540,
+        "persisted_records": 540,
+        "pending_after": 60,
+        "cycles": 24
+      }
+    }
+  ]
+}

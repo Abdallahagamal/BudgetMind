@@ -1,0 +1,22 @@
+{
+  "classification_only": {
+    "n_tasks": 500,
+    "p50_ms": 0.1486,
+    "p95_ms": 0.172,
+    "p99_ms": 0.3523,
+    "max_ms": 0.9201,
+    "min_ms": 0.1405,
+    "mean_ms": 0.1568,
+    "n_samples": 500
+  },
+  "pipeline_per_task": {
+    "n_tasks": 300,
+    "p50_ms": 0.8431,
+    "p95_ms": 1.0363,
+    "p99_ms": 1.3113,
+    "max_ms": 2.331,
+    "min_ms": 0.76,
+    "mean_ms": 0.873,
+    "n_samples": 300
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "classification_only": {
+    "n_tasks": 2000,
+    "warmup_tasks": 50,
+    "elapsed_seconds": 0.3168,
+    "throughput_tasks_per_sec": 6313.87,
+    "avg_ms_per_task": 0.1584
+  },
+  "end_to_end_pipeline": {
+    "n_tasks": 1000,
+    "batch_size": 50,
+    "processed": 1000,
+    "elapsed_seconds": 0.7315,
+    "throughput_tasks_per_sec": 1367.11
+  },
+  "throughput_vs_load_size": [
+    {
+      "n_tasks": 100,
+      "batch_size": 50,
+      "processed": 100,
+      "elapsed_seconds": 0.0763,
+      "throughput_tasks_per_sec": 1310.26
+    },
+    {
+      "n_tasks": 500,
+      "batch_size": 50,
+      "processed": 500,
+      "elapsed_seconds": 0.3682,
+      "throughput_tasks_per_sec": 1357.84
+    },
+    {
+      "n_tasks": 1000,
+      "batch_size": 50,
+      "processed": 1000,
+      "elapsed_seconds": 0.7672,
+      "throughput_tasks_per_sec": 1303.49
+    },
+    {
+      "n_tasks": 2000,
+      "batch_size": 50,
+      "processed": 2000,
+      "elapsed_seconds": 1.5008,
+      "throughput_tasks_per_sec": 1332.63
+    }
+  ]
+}
