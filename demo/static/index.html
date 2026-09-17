@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BudgetMind — Task Classifier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #14171c;
+    --panel: #1b1f26;
+    --panel-border: #2a2f38;
+    --text: #e9ecf1;
+    --text-dim: #9aa3b2;
+    --accent: #e8a33d;
+    --accent-dim: #4a3b22;
+    --track: #262b33;
+    --danger: #d9695f;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    min-height: 100vh;
+  }
+  .wrap {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+  header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--panel-border);
+    padding-bottom: 20px;
+  }
+  header h1 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  header h1 span { color: var(--accent); }
+  header p {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 14px;
+  }
+  .intro {
+    color: var(--text-dim);
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 62ch;
+    margin: 24px 0 32px;
+  }
+  .input-panel {
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  textarea {
+    width: 100%;
+    min-height: 110px;
+    resize: vertical;
+    background: var(--bg);
+    border: 1px solid var(--panel-border);
+    border-radius: 8px;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 14px;
+  }
+  textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+  .examples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .example-chip {
+    background: transparent;
+    border: 1px solid var(--panel-border);
+    color: var(--text-dim);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .example-chip:hover {
+    border-color: var(--accent);
+    color: var(--text);
+  }
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 18px;
+  }
+  button.run {
+    background: var(--accent);
+    color: #1a1305;
+    border: none;
+    font-weight: 600;
+    font-size: 14.5px;
+    padding: 11px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: filter 0.15s;
+  }
+  button.run:hover { filter: brightness(1.08); }
+  button.run:disabled { opacity: 0.5; cursor: default; }
+  .status {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--text-dim);
+  }
+  .status.error { color: var(--danger); }
+
+  .results {
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  @media (max-width: 780px) {
+    .results { grid-template-columns: 1fr; }
+  }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    border-radius: 10px;
+    padding: 18px 18px 20px;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  .card.visible { opacity: 1; transform: translateY(0); }
+  .card .dim-name {
+    color: var(--text-dim);
+    font-size: 12.5px;
+    font-family: 'IBM Plex Mono', monospace;
+    margin-bottom: 6px;
+  }
+  .card .top-label {
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    line-height: 1.3;
+  }
+  .card .meta {
+    display: flex;
+    gap: 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-bottom: 16px;
+  }
+  .card .meta b { color: var(--text); font-weight: 500; }
+  .bar-row {
+    margin-bottom: 9px;
+  }
+  .bar-row:last-child { margin-bottom: 0; }
+  .bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12.5px;
+    color: var(--text-dim);
+    margin-bottom: 4px;
+  }
+  .bar-label .pct {
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--text);
+  }
+  .bar-track {
+    height: 6px;
+    background: var(--track);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    background: var(--track-fill, var(--text-dim));
+    border-radius: 999px;
+    width: 0%;
+    transition: width 0.5s ease;
+  }
+  .bar-row.top .bar-fill { background: var(--accent); }
+  .bar-row.top .bar-label { color: var(--text); }
+
+  .empty-state {
+    margin-top: 36px;
+    border: 1px dashed var(--panel-border);
+    border-radius: 10px;
+    padding: 40px 20px;
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 14px;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>BudgetMind <span>/ Task Classifier</span></h1>
+      <p>Sprint 3 — type, complexity &amp; domain</p>
+    </header>
+
+    <p class="intro">
+      Describe a task the way an application would send it to a router. The text is embedded
+      with the same sentence-transformer used to build the training set, then scored by the
+      three classifiers that sit at the front of the routing pipeline.
+    </p>
+
+    <div class="input-panel">
+      <textarea id="taskInput" placeholder="e.g. Write a Python function that merges two sorted linked lists in O(n) time."></textarea>
+      <div class="examples" id="examples"></div>
+      <div class="actions">
+        <button class="run" id="runBtn">Classify task</button>
+        <span class="status" id="status"></span>
+      </div>
+    </div>
+
+    <div id="resultsWrap"></div>
+  </div>
+
+<script>
+const EXAMPLES = [
+  "Write a Python function that merges two sorted linked lists.",
+  "Summarize this quarterly earnings report in three bullet points.",
+  "Prove that the square root of 2 is irrational.",
+  "Translate this product description from English to Spanish.",
+  "Design the database schema for a multi-tenant SaaS billing system.",
+  "Write a short story about a lighthouse keeper who finds a message in a bottle.",
+];
+
+const DIM_META = {
+  type: { title: "Type" },
+  complexity: { title: "Complexity" },
+  domain: { title: "Domain" },
+};
+
+const examplesEl = document.getElementById('examples');
+EXAMPLES.forEach(ex => {
+  const chip = document.createElement('button');
+  chip.className = 'example-chip';
+  chip.textContent = ex.length > 46 ? ex.slice(0, 44) + '…' : ex;
+  chip.title = ex;
+  chip.addEventListener('click', () => {
+    document.getElementById('taskInput').value = ex;
+  });
+  examplesEl.appendChild(chip);
+});
+
+const taskInput = document.getElementById('taskInput');
+const runBtn = document.getElementById('runBtn');
+const statusEl = document.getElementById('status');
+const resultsWrap = document.getElementById('resultsWrap');
+
+function renderCard(dimKey, data) {
+  const meta = DIM_META[dimKey];
+  const card = document.createElement('div');
+  card.className = 'card';
+
+  const barsHtml = data.ranked.slice(0, 5).map((r, i) => `
+    <div class="bar-row ${i === 0 ? 'top' : ''}">
+      <div class="bar-label">
+        <span>${r.label}</span>
+        <span class="pct">${(r.probability * 100).toFixed(1)}%</span>
+      </div>
+      <div class="bar-track">
+        <div class="bar-fill" style="width:${(r.probability * 100).toFixed(1)}%"></div>
+      </div>
+    </div>
+  `).join('');
+
+  card.innerHTML = `
+    <div class="dim-name">${meta.title}</div>
+    <div class="top-label">${data.label}</div>
+    <div class="meta">
+      <span>confidence <b>${(data.confidence * 100).toFixed(1)}%</b></span>
+      <span>margin <b>${data.margin.toFixed(3)}</b></span>
+    </div>
+    ${barsHtml}
+  `;
+  return card;
+}
+
+async function classify() {
+  const text = taskInput.value.trim();
+  if (!text) {
+    statusEl.textContent = 'Type a task description first.';
+    statusEl.className = 'status error';
+    return;
+  }
+
+  runBtn.disabled = true;
+  statusEl.className = 'status';
+  statusEl.textContent = 'Embedding + classifying…';
+  resultsWrap.innerHTML = '';
+
+  try {
+    const res = await fetch('/classify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text }),
+    });
+
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.detail || `Request failed (${res.status})`);
+    }
+
+    const data = await res.json();
+    statusEl.textContent = 'Done.';
+
+    const grid = document.createElement('div');
+    grid.className = 'results';
+    ['type', 'complexity', 'domain'].forEach(key => {
+      grid.appendChild(renderCard(key, data[key]));
+    });
+    resultsWrap.appendChild(grid);
+
+    requestAnimationFrame(() => {
+      grid.querySelectorAll('.card').forEach(c => c.classList.add('visible'));
+    });
+  } catch (e) {
+    statusEl.textContent = e.message || 'Something went wrong.';
+    statusEl.className = 'status error';
+  } finally {
+    runBtn.disabled = false;
+  }
+}
+
+runBtn.addEventListener('click', classify);
+taskInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) classify();
+});
+</script>
+</body>
+</html>
