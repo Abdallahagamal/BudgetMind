@@ -16,7 +16,7 @@ from evaluation import evaluate_predictions, format_evaluation  # noqa: E402
 from task_profile import predict_with_margin  # noqa: E402
 
 RESULTS_DIR = Path(__file__).resolve().parent.parent / "results"
-DIMENSION = "type"
+DIMENSION = "complexity"
 TOLERANCE = 0.01  # accuracy/F1 points; guards against silent drift, not noise
 
 
@@ -27,7 +27,7 @@ def check(label: str, ok: bool, detail: str) -> bool:
 
 
 def main() -> int:
-    print(f"{'=' * 78}\n  TYPE — Sprint 3 accuracy test (regression check vs Sprint 2)\n{'=' * 78}\n")
+    print(f"{'=' * 78}\n  COMPLEXITY — Sprint 3 accuracy test (regression check vs Sprint 2)\n{'=' * 78}\n")
     all_ok = True
 
     test = load_split("test")
@@ -42,13 +42,13 @@ def main() -> int:
     all_ok &= check("test set size", len(test) == 83, f"got {len(test)}")
 
     sprint2_results = json.loads(
-        (REPO_ROOT / "Sprint2" / "results" / "type_results.json").read_text(encoding="utf-8")
+        (REPO_ROOT / "Sprint2" / "results" / "complexity_results.json").read_text(encoding="utf-8")
     )
     recorded = sprint2_results["candidates"]["LogisticRegression"]["random_protocol"]
 
     # --- 2. Sprint 2 baseline reproduces its recorded numbers ---
     print("\nSprint 2 baseline reproduction")
-    baseline = joblib.load(REPO_ROOT / "Sprint2" / "models" / "type_classifier_baseline.pkl")
+    baseline = joblib.load(REPO_ROOT / "Sprint2" / "models" / "complexity_classifier_baseline.pkl")
     proba = baseline.predict_proba(test.X)
     pred = np.asarray([baseline.classes_[i] for i in proba.argmax(axis=1)])
     ev = evaluate_predictions(y_test, pred, model_name="baseline", dimension=DIMENSION,
@@ -74,7 +74,7 @@ def main() -> int:
         f"label={sample.label!r} confidence={sample.confidence:.4f} margin={sample.margin:.4f}",
     )
 
-    refined_path = Path(__file__).resolve().parent.parent / "models" / "type_classifier_refined.pkl"
+    refined_path = Path(__file__).resolve().parent.parent / "models" / "complexity_classifier_refined.pkl"
     report = {
         "dimension": DIMENSION,
         "all_checks_passed": all_ok,
@@ -96,7 +96,7 @@ def main() -> int:
     print(f"\n{'=' * 78}\n  Overall: {'ALL CHECKS PASSED' if all_ok else 'SOME CHECKS FAILED'}\n{'=' * 78}")
 
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
-    out = RESULTS_DIR / "type_accuracy_test.json"
+    out = RESULTS_DIR / "complexity_accuracy_test.json"
     out.write_text(json.dumps(report, indent=2), encoding="utf-8")
     print(f"Report saved to {out.relative_to(REPO_ROOT)}")
 

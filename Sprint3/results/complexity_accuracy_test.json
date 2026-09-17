@@ -1,0 +1,14 @@
+{
+  "dimension": "complexity",
+  "all_checks_passed": false,
+  "baseline": {
+    "live_accuracy": 0.891566265060241,
+    "live_macro_f1": 0.8837581991651758,
+    "recorded_accuracy": 0.9036144578313253,
+    "recorded_macro_f1": 0.8939354727398205
+  },
+  "refined": {
+    "live_accuracy": 0.9036144578313253,
+    "live_macro_f1": 0.8881578947368421
+  }
+}

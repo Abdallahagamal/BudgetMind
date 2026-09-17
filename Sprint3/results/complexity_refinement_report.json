@@ -1,0 +1,269 @@
+{
+  "dimension": "complexity",
+  "selected_calibration": "sigmoid_cv5",
+  "selection_rationale": "Restricted a priori to 'sigmoid' calibration (smallest class, High, has 94 examples in train+validation -- comfortably larger than Type/Domain's smallest classes but still well under the ~1,000-per-class isotonic reliability guideline), then picked lowest validation ECE within that family. Does not address Complexity's documented margin-gate hole (5 of 8 test errors carry margin >= 0.5) on its own -- the margin-gate table below reports whether recalibration narrows it, but the underlying under-learned 'specialized lookup -> Medium' rule is a labeling-rule/data issue, not a calibration one.",
+  "models": {
+    "baseline_uncalibrated": {
+      "test_accuracy": 0.891566265060241,
+      "test_macro_precision": 0.8750700280112045,
+      "test_macro_recall": 0.8952569169960475,
+      "test_macro_f1": 0.8837581991651758,
+      "test_ece": 0.11252932099978662,
+      "inference_ms_for_test_set": 0.20590005442500114,
+      "margin_gate": [
+        {
+          "min_margin": 0.0,
+          "admitted": 83,
+          "admitted_pct": 1.0,
+          "accuracy_among_admitted": 0.891566265060241
+        },
+        {
+          "min_margin": 0.3,
+          "admitted": 69,
+          "admitted_pct": 0.8313253012048193,
+          "accuracy_among_admitted": 0.9420289855072463
+        },
+        {
+          "min_margin": 0.5,
+          "admitted": 62,
+          "admitted_pct": 0.7469879518072289,
+          "accuracy_among_admitted": 0.9516129032258065
+        }
+      ],
+      "per_class": [
+        {
+          "label": "High",
+          "precision": 0.8823529411764706,
+          "recall": 1.0,
+          "f1": 0.9375,
+          "support": 15
+        },
+        {
+          "label": "Low",
+          "precision": 0.9333333333333333,
+          "recall": 0.9130434782608695,
+          "f1": 0.9230769230769231,
+          "support": 46
+        },
+        {
+          "label": "Medium",
+          "precision": 0.8095238095238095,
+          "recall": 0.7727272727272727,
+          "f1": 0.7906976744186046,
+          "support": 22
+        }
+      ]
+    },
+    "sigmoid_cv3": {
+      "test_accuracy": 0.891566265060241,
+      "test_macro_precision": 0.8993464052287582,
+      "test_macro_recall": 0.8715415019762845,
+      "test_macro_f1": 0.8740306027677162,
+      "test_ece": 0.05633638932980117,
+      "inference_ms_for_test_set": 1.4458997175097466,
+      "margin_gate": [
+        {
+          "min_margin": 0.0,
+          "admitted": 83,
+          "admitted_pct": 1.0,
+          "accuracy_among_admitted": 0.891566265060241
+        },
+        {
+          "min_margin": 0.3,
+          "admitted": 73,
+          "admitted_pct": 0.8795180722891566,
+          "accuracy_among_admitted": 0.9315068493150684
+        },
+        {
+          "min_margin": 0.5,
+          "admitted": 67,
+          "admitted_pct": 0.8072289156626506,
+          "accuracy_among_admitted": 0.9402985074626866
+        }
+      ],
+      "per_class": [
+        {
+          "label": "High",
+          "precision": 0.8823529411764706,
+          "recall": 1.0,
+          "f1": 0.9375,
+          "support": 15
+        },
+        {
+          "label": "Low",
+          "precision": 0.8823529411764706,
+          "recall": 0.9782608695652174,
+          "f1": 0.9278350515463918,
+          "support": 46
+        },
+        {
+          "label": "Medium",
+          "precision": 0.9333333333333333,
+          "recall": 0.6363636363636364,
+          "f1": 0.7567567567567568,
+          "support": 22
+        }
+      ]
+    },
+    "sigmoid_cv5": {
+      "test_accuracy": 0.9036144578313253,
+      "test_macro_precision": 0.9066176470588235,
+      "test_macro_recall": 0.8866930171277997,
+      "test_macro_f1": 0.8881578947368421,
+      "test_ece": 0.0785374904400837,
+      "inference_ms_for_test_set": 2.154699992388487,
+      "margin_gate": [
+        {
+          "min_margin": 0.0,
+          "admitted": 83,
+          "admitted_pct": 1.0,
+          "accuracy_among_admitted": 0.9036144578313253
+        },
+        {
+          "min_margin": 0.3,
+          "admitted": 74,
+          "admitted_pct": 0.891566265060241,
+          "accuracy_among_admitted": 0.918918918918919
+        },
+        {
+          "min_margin": 0.5,
+          "admitted": 68,
+          "admitted_pct": 0.8192771084337349,
+          "accuracy_among_admitted": 0.9558823529411765
+        }
+      ],
+      "per_class": [
+        {
+          "label": "High",
+          "precision": 0.8823529411764706,
+          "recall": 1.0,
+          "f1": 0.9375,
+          "support": 15
+        },
+        {
+          "label": "Low",
+          "precision": 0.9,
+          "recall": 0.9782608695652174,
+          "f1": 0.9375,
+          "support": 46
+        },
+        {
+          "label": "Medium",
+          "precision": 0.9375,
+          "recall": 0.6818181818181818,
+          "f1": 0.7894736842105263,
+          "support": 22
+        }
+      ]
+    },
+    "isotonic_cv3": {
+      "test_accuracy": 0.9036144578313253,
+      "test_macro_precision": 0.9066176470588235,
+      "test_macro_recall": 0.8866930171277997,
+      "test_macro_f1": 0.8881578947368421,
+      "test_ece": 0.06793105525542514,
+      "inference_ms_for_test_set": 2.53460044041276,
+      "margin_gate": [
+        {
+          "min_margin": 0.0,
+          "admitted": 83,
+          "admitted_pct": 1.0,
+          "accuracy_among_admitted": 0.9036144578313253
+        },
+        {
+          "min_margin": 0.3,
+          "admitted": 73,
+          "admitted_pct": 0.8795180722891566,
+          "accuracy_among_admitted": 0.9178082191780822
+        },
+        {
+          "min_margin": 0.5,
+          "admitted": 68,
+          "admitted_pct": 0.8192771084337349,
+          "accuracy_among_admitted": 0.9264705882352942
+        }
+      ],
+      "per_class": [
+        {
+          "label": "High",
+          "precision": 0.8823529411764706,
+          "recall": 1.0,
+          "f1": 0.9375,
+          "support": 15
+        },
+        {
+          "label": "Low",
+          "precision": 0.9,
+          "recall": 0.9782608695652174,
+          "f1": 0.9375,
+          "support": 46
+        },
+        {
+          "label": "Medium",
+          "precision": 0.9375,
+          "recall": 0.6818181818181818,
+          "f1": 0.7894736842105263,
+          "support": 22
+        }
+      ]
+    },
+    "isotonic_cv5": {
+      "test_accuracy": 0.927710843373494,
+      "test_macro_precision": 0.9214324618736383,
+      "test_macro_recall": 0.9169960474308301,
+      "test_macro_f1": 0.9149822695035462,
+      "test_ece": 0.07517027128671477,
+      "inference_ms_for_test_set": 2.109900116920471,
+      "margin_gate": [
+        {
+          "min_margin": 0.0,
+          "admitted": 83,
+          "admitted_pct": 1.0,
+          "accuracy_among_admitted": 0.927710843373494
+        },
+        {
+          "min_margin": 0.3,
+          "admitted": 76,
+          "admitted_pct": 0.9156626506024096,
+          "accuracy_among_admitted": 0.9210526315789473
+        },
+        {
+          "min_margin": 0.5,
+          "admitted": 72,
+          "admitted_pct": 0.8674698795180723,
+          "accuracy_among_admitted": 0.9166666666666666
+        }
+      ],
+      "per_class": [
+        {
+          "label": "High",
+          "precision": 0.8823529411764706,
+          "recall": 1.0,
+          "f1": 0.9375,
+          "support": 15
+        },
+        {
+          "label": "Low",
+          "precision": 0.9375,
+          "recall": 0.9782608695652174,
+          "f1": 0.9574468085106383,
+          "support": 46
+        },
+        {
+          "label": "Medium",
+          "precision": 0.9444444444444444,
+          "recall": 0.7727272727272727,
+          "f1": 0.85,
+          "support": 22
+        }
+      ]
+    }
+  },
+  "delta_test_macro_f1": 0.004399695571666307,
+  "delta_test_ece": -0.033991830559702924,
+  "contract_check": {
+    "label": "Low",
+    "confidence": 0.8703,
+    "margin": 0.746
+  }
+}

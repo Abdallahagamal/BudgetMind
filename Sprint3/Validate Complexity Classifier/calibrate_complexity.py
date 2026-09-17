@@ -10,6 +10,10 @@ import numpy as np
 from sklearn.calibration import CalibratedClassifierCV
 from sklearn.linear_model import LogisticRegression
 
+
+if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
+    sys.stdout.reconfigure(encoding="utf-8")
+
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SPRINT2_SRC = REPO_ROOT / "Sprint2" / "src"
 sys.path.insert(0, str(SPRINT2_SRC))
@@ -24,7 +28,7 @@ from task_profile import predict_with_margin  # noqa: E402
 
 RESULTS_DIR = Path(__file__).resolve().parent.parent / "results"
 MODELS_DIR = Path(__file__).resolve().parent.parent / "models"
-DIMENSION = "type"
+DIMENSION = "complexity"
 RANDOM_SEED = 42
 
 CALIBRATION_GRID = [
@@ -36,12 +40,14 @@ CALIBRATION_GRID = [
 
 # Isotonic regression is non-parametric and known to overfit when the
 # per-class calibration sample is small (sklearn's own docs recommend Platt/
-# sigmoid below roughly 1,000 examples per class). TYPE's smallest class
-# (Summarization) has only 29 examples total, ~24 available for calibration
-# after holding out test. So sigmoid is the a priori preferred family here —
-# decided before looking at test, not after. Isotonic is still tried and
-# reported for comparison, since the risk is worth demonstrating rather than
-# just asserting.
+# sigmoid below roughly 1,000 examples per class). COMPLEXITY's smallest
+# class (High) has 94 examples in train+validation combined (77 + 17) — the
+# largest "smallest class" of the three dimensions (Type's Summarization was
+# 29, Domain's Mathematics & Quantitative was 34), but still far under the
+# ~1,000 threshold. Sigmoid is kept as the a priori preferred family for
+# consistency with Type and Domain's reasoning and for a like-for-like
+# comparison across the three sync reports. Isotonic is still tried and
+# reported for comparison.
 PREFERRED_FAMILY = "sigmoid"
 
 
@@ -88,10 +94,10 @@ def main() -> int:
     X_trainval = np.vstack([train.X, validation.X])
     y_trainval = np.concatenate([y_train, y_val])
 
-    print(f"{'=' * 78}\n  TYPE — Sprint 3 model refinement: probability calibration\n{'=' * 78}")
+    print(f"{'=' * 78}\n  COMPLEXITY — Sprint 3 model refinement: probability calibration\n{'=' * 78}")
 
     # ---- Baseline: Sprint 2's committed model, loaded (not refit) ----
-    baseline_path = REPO_ROOT / "Sprint2" / "models" / "type_classifier_baseline.pkl"
+    baseline_path = REPO_ROOT / "Sprint2" / "models" / "complexity_classifier_baseline.pkl"
     baseline = joblib.load(baseline_path)
     print(f"\nLoaded Sprint 2 baseline from {baseline_path.relative_to(REPO_ROOT)}")
 
@@ -139,11 +145,8 @@ def main() -> int:
     if not eligible:
         eligible = candidates  # guardrail: never end up with nothing to pick
 
-    # Val Macro-F1 is 1.000 for every candidate here (val set is tiny and
-    # separates perfectly for all of them) — that guardrail is uninformative
-    # on this dataset, so it can't be the deciding factor. Restrict to the
-    # a priori preferred family (sigmoid, chosen for the small-sample reason
-    # above) and pick the lowest val ECE within it.
+    # Restrict to the a priori preferred family (sigmoid, chosen for the
+    # small-sample reason above) and pick the lowest val ECE within it.
     preferred = {k: v for k, v in eligible.items() if k.startswith(PREFERRED_FAMILY)}
     pool = preferred if preferred else eligible
     winner_name = min(pool, key=lambda k: pool[k]["val_ece"])
@@ -161,9 +164,16 @@ def main() -> int:
     report = {"dimension": DIMENSION, "selected_calibration": winner_name,
               "selection_rationale": (
                   f"Restricted a priori to '{PREFERRED_FAMILY}' calibration "
-                  "(small per-class sample, esp. Summarization n=29, makes "
-                  "isotonic prone to overfitting), then picked lowest "
-                  "validation ECE within that family."
+                  "(smallest class, High, has 94 examples in train+validation "
+                  "-- comfortably larger than Type/Domain's smallest classes "
+                  "but still well under the ~1,000-per-class isotonic "
+                  "reliability guideline), then picked lowest validation ECE "
+                  "within that family. Does not address Complexity's "
+                  "documented margin-gate hole (5 of 8 test errors carry "
+                  "margin >= 0.5) on its own -- the margin-gate table below "
+                  "reports whether recalibration narrows it, but the "
+                  "underlying under-learned 'specialized lookup -> Medium' "
+                  "rule is a labeling-rule/data issue, not a calibration one."
               ), "models": {}}
 
     all_models = {"baseline_uncalibrated": baseline, **{k: v["model"] for k, v in candidates.items()}}
@@ -208,7 +218,7 @@ def main() -> int:
     # ---- Save refined model + report (does NOT overwrite Sprint 2 baseline) ----
     MODELS_DIR.mkdir(parents=True, exist_ok=True)
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
-    refined_path = MODELS_DIR / "type_classifier_refined.pkl"
+    refined_path = MODELS_DIR / "complexity_classifier_refined.pkl"
     joblib.dump(winner, refined_path)
     print(f"\nRefined model saved to {refined_path.relative_to(REPO_ROOT)} "
           f"(Sprint 2 baseline left untouched — swap is a team decision).")
@@ -222,7 +232,7 @@ def main() -> int:
         "margin": round(sample_pred.margin, 4),
     }
 
-    out = RESULTS_DIR / "type_refinement_report.json"
+    out = RESULTS_DIR / "complexity_refinement_report.json"
     out.write_text(json.dumps(report, indent=2), encoding="utf-8")
     print(f"Report saved to {out.relative_to(REPO_ROOT)}")
 

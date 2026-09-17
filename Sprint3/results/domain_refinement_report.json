@@ -1,0 +1,304 @@
+{
+  "dimension": "domain",
+  "selected_calibration": "sigmoid_cv5",
+  "selection_rationale": "Restricted a priori to 'sigmoid' calibration (small per-class sample, esp. Mathematics & Quantitative n=40, makes isotonic prone to overfitting), then picked lowest validation ECE within that family. Does not address Domain's data-coverage limitations (Mathematics & Quantitative, Language & Communication) \u2014 those require new data, not calibration.",
+  "models": {
+    "baseline_uncalibrated": {
+      "test_accuracy": 0.963855421686747,
+      "test_macro_precision": 0.9634453781512605,
+      "test_macro_recall": 0.9764957264957266,
+      "test_macro_f1": 0.9689096589339962,
+      "test_ece": 0.2028255186103009,
+      "inference_ms_for_test_set": 0.7875002920627594,
+      "margin_gate": [
+        {
+          "min_margin": 0.0,
+          "admitted": 83,
+          "admitted_pct": 1.0,
+          "accuracy_among_admitted": 0.963855421686747
+        },
+        {
+          "min_margin": 0.3,
+          "admitted": 73,
+          "admitted_pct": 0.8795180722891566,
+          "accuracy_among_admitted": 0.9863013698630136
+        },
+        {
+          "min_margin": 0.5,
+          "admitted": 60,
+          "admitted_pct": 0.7228915662650602,
+          "accuracy_among_admitted": 0.9833333333333333
+        }
+      ],
+      "per_class": [
+        {
+          "label": "General Knowledge/Cross-Domain",
+          "precision": 0.9714285714285714,
+          "recall": 0.9444444444444444,
+          "f1": 0.9577464788732394,
+          "support": 36
+        },
+        {
+          "label": "Language & Communication",
+          "precision": 0.8823529411764706,
+          "recall": 1.0,
+          "f1": 0.9375,
+          "support": 15
+        },
+        {
+          "label": "Mathematics & Quantitative",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 6
+        },
+        {
+          "label": "Software Engineering & Technology",
+          "precision": 1.0,
+          "recall": 0.9615384615384616,
+          "f1": 0.9803921568627451,
+          "support": 26
+        }
+      ]
+    },
+    "sigmoid_cv3": {
+      "test_accuracy": 0.9759036144578314,
+      "test_macro_precision": 0.9774305555555556,
+      "test_macro_recall": 0.983440170940171,
+      "test_macro_f1": 0.9800890786422096,
+      "test_ece": 0.11094445267306474,
+      "inference_ms_for_test_set": 7.505900226533413,
+      "margin_gate": [
+        {
+          "min_margin": 0.0,
+          "admitted": 83,
+          "admitted_pct": 1.0,
+          "accuracy_among_admitted": 0.9759036144578314
+        },
+        {
+          "min_margin": 0.3,
+          "admitted": 78,
+          "admitted_pct": 0.9397590361445783,
+          "accuracy_among_admitted": 0.9743589743589743
+        },
+        {
+          "min_margin": 0.5,
+          "admitted": 73,
+          "admitted_pct": 0.8795180722891566,
+          "accuracy_among_admitted": 0.9863013698630136
+        }
+      ],
+      "per_class": [
+        {
+          "label": "General Knowledge/Cross-Domain",
+          "precision": 0.9722222222222222,
+          "recall": 0.9722222222222222,
+          "f1": 0.9722222222222222,
+          "support": 36
+        },
+        {
+          "label": "Language & Communication",
+          "precision": 0.9375,
+          "recall": 1.0,
+          "f1": 0.967741935483871,
+          "support": 15
+        },
+        {
+          "label": "Mathematics & Quantitative",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 6
+        },
+        {
+          "label": "Software Engineering & Technology",
+          "precision": 1.0,
+          "recall": 0.9615384615384616,
+          "f1": 0.9803921568627451,
+          "support": 26
+        }
+      ]
+    },
+    "sigmoid_cv5": {
+      "test_accuracy": 0.9759036144578314,
+      "test_macro_precision": 0.9774305555555556,
+      "test_macro_recall": 0.983440170940171,
+      "test_macro_f1": 0.9800890786422096,
+      "test_ece": 0.09941717414990575,
+      "inference_ms_for_test_set": 12.990100309252739,
+      "margin_gate": [
+        {
+          "min_margin": 0.0,
+          "admitted": 83,
+          "admitted_pct": 1.0,
+          "accuracy_among_admitted": 0.9759036144578314
+        },
+        {
+          "min_margin": 0.3,
+          "admitted": 77,
+          "admitted_pct": 0.927710843373494,
+          "accuracy_among_admitted": 0.987012987012987
+        },
+        {
+          "min_margin": 0.5,
+          "admitted": 73,
+          "admitted_pct": 0.8795180722891566,
+          "accuracy_among_admitted": 0.9863013698630136
+        }
+      ],
+      "per_class": [
+        {
+          "label": "General Knowledge/Cross-Domain",
+          "precision": 0.9722222222222222,
+          "recall": 0.9722222222222222,
+          "f1": 0.9722222222222222,
+          "support": 36
+        },
+        {
+          "label": "Language & Communication",
+          "precision": 0.9375,
+          "recall": 1.0,
+          "f1": 0.967741935483871,
+          "support": 15
+        },
+        {
+          "label": "Mathematics & Quantitative",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 6
+        },
+        {
+          "label": "Software Engineering & Technology",
+          "precision": 1.0,
+          "recall": 0.9615384615384616,
+          "f1": 0.9803921568627451,
+          "support": 26
+        }
+      ]
+    },
+    "isotonic_cv3": {
+      "test_accuracy": 0.9759036144578314,
+      "test_macro_precision": 0.9868421052631579,
+      "test_macro_recall": 0.9737179487179488,
+      "test_macro_f1": 0.9797205928037571,
+      "test_ece": 0.06444164591070943,
+      "inference_ms_for_test_set": 9.957800153642893,
+      "margin_gate": [
+        {
+          "min_margin": 0.0,
+          "admitted": 83,
+          "admitted_pct": 1.0,
+          "accuracy_among_admitted": 0.9759036144578314
+        },
+        {
+          "min_margin": 0.3,
+          "admitted": 78,
+          "admitted_pct": 0.9397590361445783,
+          "accuracy_among_admitted": 0.9871794871794872
+        },
+        {
+          "min_margin": 0.5,
+          "admitted": 76,
+          "admitted_pct": 0.9156626506024096,
+          "accuracy_among_admitted": 0.9868421052631579
+        }
+      ],
+      "per_class": [
+        {
+          "label": "General Knowledge/Cross-Domain",
+          "precision": 0.9473684210526315,
+          "recall": 1.0,
+          "f1": 0.972972972972973,
+          "support": 36
+        },
+        {
+          "label": "Language & Communication",
+          "precision": 1.0,
+          "recall": 0.9333333333333333,
+          "f1": 0.9655172413793104,
+          "support": 15
+        },
+        {
+          "label": "Mathematics & Quantitative",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 6
+        },
+        {
+          "label": "Software Engineering & Technology",
+          "precision": 1.0,
+          "recall": 0.9615384615384616,
+          "f1": 0.9803921568627451,
+          "support": 26
+        }
+      ]
+    },
+    "isotonic_cv5": {
+      "test_accuracy": 0.9518072289156626,
+      "test_macro_precision": 0.9598290598290599,
+      "test_macro_recall": 0.9598290598290599,
+      "test_macro_f1": 0.9598290598290599,
+      "test_ece": 0.04675591176843636,
+      "inference_ms_for_test_set": 15.042399987578392,
+      "margin_gate": [
+        {
+          "min_margin": 0.0,
+          "admitted": 83,
+          "admitted_pct": 1.0,
+          "accuracy_among_admitted": 0.9518072289156626
+        },
+        {
+          "min_margin": 0.3,
+          "admitted": 79,
+          "admitted_pct": 0.9518072289156626,
+          "accuracy_among_admitted": 0.9873417721518988
+        },
+        {
+          "min_margin": 0.5,
+          "admitted": 75,
+          "admitted_pct": 0.9036144578313253,
+          "accuracy_among_admitted": 0.9866666666666667
+        }
+      ],
+      "per_class": [
+        {
+          "label": "General Knowledge/Cross-Domain",
+          "precision": 0.9444444444444444,
+          "recall": 0.9444444444444444,
+          "f1": 0.9444444444444444,
+          "support": 36
+        },
+        {
+          "label": "Language & Communication",
+          "precision": 0.9333333333333333,
+          "recall": 0.9333333333333333,
+          "f1": 0.9333333333333333,
+          "support": 15
+        },
+        {
+          "label": "Mathematics & Quantitative",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 6
+        },
+        {
+          "label": "Software Engineering & Technology",
+          "precision": 0.9615384615384616,
+          "recall": 0.9615384615384616,
+          "f1": 0.9615384615384616,
+          "support": 26
+        }
+      ]
+    }
+  },
+  "delta_test_macro_f1": 0.011179419708213456,
+  "delta_test_ece": -0.10340834446039515,
+  "contract_check": {
+    "label": "General Knowledge/Cross-Domain",
+    "confidence": 0.9473,
+    "margin": 0.9238
+  }
+}

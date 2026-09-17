@@ -1,0 +1,25 @@
+{
+  "dimension": "complexity",
+  "owner": "Rawda",
+  "sprint": 3,
+  "entries": [
+    {
+      "model": "Sprint2_baseline (LogisticRegression, uncalibrated)",
+      "accuracy": 0.8916,
+      "macro_precision": 0.8751,
+      "macro_recall": 0.8953,
+      "macro_f1": 0.8838,
+      "ece": 0.1125,
+      "n_test": 83
+    },
+    {
+      "model": "Sprint3_refined (LogisticRegression + sigmoid calibration)",
+      "accuracy": 0.9036,
+      "macro_precision": 0.9066,
+      "macro_recall": 0.8867,
+      "macro_f1": 0.8882,
+      "ece": 0.0785,
+      "n_test": 83
+    }
+  ]
+}

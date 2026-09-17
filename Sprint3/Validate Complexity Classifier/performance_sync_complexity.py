@@ -15,7 +15,7 @@ from data import load_split  # noqa: E402
 from evaluation import evaluate_predictions, expected_calibration_error  # noqa: E402
 
 RESULTS_DIR = Path(__file__).resolve().parent.parent / "results"
-DIMENSION = "type"
+DIMENSION = "complexity"
 
 
 def summarize(model_path: Path, model_label: str, X_test, y_test, labels) -> dict:
@@ -40,28 +40,28 @@ def main() -> int:
     y_test = test.y(DIMENSION)
     labels = sorted(set(y_test))
 
-    sync = {"dimension": DIMENSION, "owner": "Esraa", "sprint": 3, "entries": []}
+    sync = {"dimension": DIMENSION, "owner": "Rawda", "sprint": 3, "entries": []}
 
     sync["entries"].append(summarize(
-        REPO_ROOT / "Sprint2" / "models" / "type_classifier_baseline.pkl",
+        REPO_ROOT / "Sprint2" / "models" / "complexity_classifier_baseline.pkl",
         "Sprint2_baseline (LogisticRegression, uncalibrated)", test.X, y_test, labels,
     ))
 
-    refined_path = Path(__file__).resolve().parent.parent / "models" / "type_classifier_refined.pkl"
+    refined_path = Path(__file__).resolve().parent.parent / "models" / "complexity_classifier_refined.pkl"
     if refined_path.exists():
         sync["entries"].append(summarize(
             refined_path, "Sprint3_refined (LogisticRegression + sigmoid calibration)",
             test.X, y_test, labels,
         ))
 
-    print(f"TYPE — performance sync ({len(sync['entries'])} entries)\n")
+    print(f"COMPLEXITY — performance sync ({len(sync['entries'])} entries)\n")
     for e in sync["entries"]:
         print(f"  {e['model']:<48} acc={e['accuracy']:.3f}  macroF1={e['macro_f1']:.3f}  ECE={e['ece']:.3f}")
 
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
-    out = RESULTS_DIR / "type_performance_sync.json"
+    out = RESULTS_DIR / "complexity_performance_sync.json"
     out.write_text(json.dumps(sync, indent=2), encoding="utf-8")
-    print(f"\nSaved to {out.relative_to(REPO_ROOT)} — ready to merge with M2/M3's equivalents.")
+    print(f"\nSaved to {out.relative_to(REPO_ROOT)} — ready to merge with M1/M3's equivalents.")
     return 0
 
 
